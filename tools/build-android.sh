@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Compila el APK de Android con Capacitor. Lo usa .github/workflows/release.yml.
 set -euo pipefail
-VERSION="${GITHUB_REF_NAME:-v1.0.0}"; [[ "$VERSION" == v* ]] || VERSION="v1.0.0"
+VERSION="v$(node -p "require('./package.json').version")"
 VNAME="${VERSION#v}"; VCODE=$(echo "$VNAME" | awk -F. '{print ($1*10000)+($2*100)+$3}')
 npm ci
 # Capacitor inserta su puente como script en línea: en Android se permite (la app no carga contenido remoto).

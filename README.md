@@ -42,5 +42,5 @@ Tus finanzas (Quincena) y tu entreno en una sola app que **funciona sin internet
 ## Para desarrolladores
 
 - `tools/build_web.py [organizador-codigo.json]`: arma `web/` a partir del código de Quincena (`source/`).
-- Publicar una versión: crear una etiqueta `vX.Y.Z` → **Compilar Windows y Android** genera el `.exe` y el `.apk` en Releases.
+- Publicar una versión: subir la versión en `package.json` y enviar los cambios a la rama `release` → **Compilar Windows y Android** genera el `.exe` y el `.apk` en Releases.
 - **Mantener Supabase activo:** un latido cada 3 días evita que el plan gratis pause el proyecto.
