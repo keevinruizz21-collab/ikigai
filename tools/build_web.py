@@ -36,7 +36,12 @@ host = supa.group(1) + '.supabase.co'
 scripts = [(m.start(), m.end(), m.group(1)) for m in re.finditer(r'<script>(.*?)</script>', html, re.S)]
 if not scripts: sys.exit('No encontré el script de Quincena')
 start, end, body = max(scripts, key=lambda s: len(s[2]))
-write(os.path.join(WEB, 'quincena.js'), body.strip() + '\n')
+BRAND_Q = '<span class="brand-mark">15·30</span><span class="brand-name">Quincena</span>'
+BRAND_I = '<span class="brand-mark">生</span><span class="brand-name">Ikigai</span>'
+body = body.replace('https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js', 'ikigai/vendor/xlsx.full.min.js')
+body = body.replace('quincena-movimientos-', 'ikigai-movimientos-').replace('filename:`quincena-', 'filename:`ikigai-')
+if 'cdnjs.cloudflare.com' in body: sys.exit('Quincena todavía carga algo de cdnjs')
+write(os.path.join(WEB, 'quincena.js'), body.strip().replace(BRAND_Q, BRAND_I) + '\n')
 loader = ('<script src="ikigai/vendor/supabase.js"></script>\n<script src="ikigai/config.js"></script>\n'
           '<script src="ikigai/core.js"></script>\n<script src="quincena.js"></script>')
 html = html[:start] + loader + html[end:]
@@ -48,7 +53,7 @@ if re.search(r'\son[a-z]+\s*=\s*["\']', html): sys.exit('Hay manejadores en lín
 html = re.sub(r'<link[^>]+fonts\.(googleapis|gstatic)\.com[^>]*>\s*', '', html)
 
 # 3. Título y cabecera
-html = re.sub(r'<title>.*?</title>', '<title>Ikigai</title>', html, count=1, flags=re.S)
+html = re.sub(r'<title>.*?</title>', '<title>Ikigai</title>', html, count=1, flags=re.S).replace(BRAND_Q, BRAND_I)
 csp = ("default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; "
        "font-src 'self'; connect-src 'self' https://%s wss://%s ipc: http://ipc.localhost; worker-src 'self'; "
        "manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'" % (host, host))
@@ -65,7 +70,7 @@ write(os.path.join(WEB, 'index.html'), html)
 # 4. Entreno sin la sección "Llevar a la app local"
 ent = read(os.path.join(SRC, 'entreno.js'))
 ent, n = re.subn(r'\n\s*<section class="panel stack"><h2>Llevar a la app local</h2>.*?</section>', '', ent, flags=re.S)
-ent = ent.replace("if(!F.demo) prefetchCode();", "")
+ent = ent.replace("if(!F.demo) prefetchCode();", "").replace('<span class="brand-mark">8·S</span><span class="brand-name">Entreno</span>', BRAND_I)
 write(os.path.join(WEB, 'entreno.js'), ent)
 
 # 5. Service worker con todos los archivos y una versión por contenido

@@ -1,0 +1,47 @@
+/* Ikigai: puerta de acceso, panel y botón de estado. Usa los tokens de color de Quincena. */
+#ik-gate{position:fixed;inset:0;z-index:200;background:var(--bg,#f1f4f3);display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) 16px max(16px,env(safe-area-inset-bottom,0px));overflow:auto}
+.ik-card{width:100%;max-width:400px;background:var(--panel,#fff);border:1px solid var(--line,#dde4e1);border-radius:16px;padding:24px 20px;display:grid;gap:14px;box-shadow:var(--shadow)}
+.ik-card h1{font-size:1.35rem;margin:0;text-wrap:balance}
+.ik-logo{width:56px;height:56px;border-radius:14px;background:var(--hero,#0f2e33);color:var(--hero-ink,#eaf4f3);display:grid;place-items:center;font-size:30px;font-family:"Noto Serif CJK JP","Yu Mincho","Hiragino Mincho ProN",serif}
+.ik-sub{color:var(--ink-2,#46544f);font-size:.92rem;line-height:1.5;margin:0}
+.ik-warn{background:var(--warn-soft,#fdf0d2);color:var(--warn-ink,#8a5a00);border-radius:8px;padding:8px 10px;font-size:.85rem;margin:0}
+.ik-err{background:var(--crit-soft,#f9e0e0);color:var(--crit-ink,#b02e2e);border-radius:8px;padding:8px 10px;font-size:.86rem;margin:0}
+.ik-card form{display:grid;gap:12px}
+.ik-f{display:grid;gap:6px;font-size:.84rem;font-weight:500;color:var(--ink-2,#46544f)}
+.ik-f input{width:100%;border:1px solid var(--line-2,#c6d0cc);background:var(--panel,#fff);color:var(--ink,#10201c);border-radius:8px;padding:11px 12px;font-size:1rem;min-height:46px}
+.ik-f input:focus{outline:2px solid var(--focus,#0d5c6b);outline-offset:0;border-color:transparent}
+#ik-code{letter-spacing:.35em;font-variant-numeric:tabular-nums;font-size:1.25rem;text-align:center}
+.ik-link{border:0;background:none;color:var(--accent,#0d5c6b);font-weight:500;padding:4px;justify-self:center;cursor:pointer}
+.ik-link:hover{text-decoration:underline}
+.ik-qr{width:200px;height:200px;justify-self:center;background:#fff;border-radius:12px;padding:8px}
+.ik-secret{font-family:var(--font-mono,monospace);font-size:.85rem;text-align:center;word-break:break-all;background:var(--panel-2,#e9eeec);border-radius:8px;padding:8px;margin:0;user-select:all}
+.ik-btn{position:relative;font-family:"Noto Serif CJK JP","Yu Mincho","Hiragino Mincho ProN",serif;font-size:17px;color:var(--ink,#10201c)}
+.ik-btn i{position:absolute;right:1px;top:1px;width:10px;height:10px;border-radius:50%;border:2px solid var(--panel,#fff);background:var(--muted,#76837e)}
+.ik-btn[data-s="ok"] i{background:var(--good,#0ca30c)}
+.ik-btn[data-s="syncing"] i,.ik-btn[data-s="pending"] i{background:var(--warn,#fab219)}
+.ik-btn[data-s="error"] i{background:var(--crit,#d03b3b)}
+.ik-btn[data-s="auth"] i{background:var(--s5,#e87ba4)}
+.ik-sheet{max-width:600px}
+.ik-sec{display:grid;gap:8px;border-top:1px solid var(--line,#dde4e1);padding-top:12px}
+.ik-sec h3{margin:0;font-size:.78rem;font-family:var(--font-mono,monospace);text-transform:uppercase;letter-spacing:.06em;color:var(--muted,#76837e);font-weight:500}
+.ik-state{display:flex;align-items:center;gap:8px;font-weight:600;margin:0}
+.ik-state i{width:10px;height:10px;border-radius:50%;background:var(--muted,#76837e)}
+.ik-state[data-s="ok"] i{background:var(--good,#0ca30c)}
+.ik-state[data-s="syncing"] i,.ik-state[data-s="pending"] i{background:var(--warn,#fab219)}
+.ik-state[data-s="error"] i{background:var(--crit,#d03b3b)}
+.ik-state[data-s="auth"] i{background:var(--s5,#e87ba4)}
+.ik-mini{font-size:.8rem;color:var(--ink-2,#46544f);margin:0;line-height:1.45}
+.ik-inline{display:inline-flex;align-items:center;gap:8px;font-size:.86rem;color:var(--ink-2,#46544f)}
+.ik-inline select{width:auto;min-height:34px;padding:4px 8px}
+.ik-bks{display:grid;gap:6px;max-height:300px;overflow:auto}
+.ik-bk{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;border:1px solid var(--line,#dde4e1);border-radius:8px;padding:8px 10px;font-size:.86rem}
+.ik-bk-a{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.ik-tag{display:inline-block;margin-left:6px;font-size:.68rem;font-weight:600;border-radius:999px;padding:1px 7px;background:var(--panel-2,#e9eeec);color:var(--ink-2,#46544f)}
+.ik-tag.ik-keep{background:var(--warn-soft,#fdf0d2);color:var(--warn-ink,#8a5a00)}
+.ik-file{position:relative;overflow:hidden;cursor:pointer;justify-self:start}
+.ik-file input{position:absolute;inset:0;opacity:0;cursor:pointer}
+#ik-toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:250;background:var(--ink,#10201c);color:var(--bg,#fff);border-radius:10px;padding:10px 14px;font-size:.88rem;max-width:calc(100vw - 32px)}
+@media (max-width:520px){ .ik-bk{grid-template-columns:1fr} .ik-bk-a{justify-content:flex-start} }
+/* El estado de la nube lo muestra el botón 生: se oculta el indicador local de Quincena para dar espacio. */
+#sync{display:none!important}
+@media (max-width:460px){ .top-in{gap:8px!important} }
