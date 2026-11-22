@@ -1,0 +1,397 @@
+job=android status=success run=45067987327 ref=release sha=f4d8e000134f8ee899c53c98510e6b78214d07ba
+
+
+added 159 packages, and audited 160 packages in 3s
+
+26 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+✔ Adding native android project in android in 30.80ms
+✔ add in 31.43ms
+✔ Copying web assets from web to android/app/src/main/assets/public in 6.66ms
+✔ Creating capacitor.config.json in android/app/src/main/assets in 507.77μs
+✔ copy android in 12.93ms
+✔ Updating Android plugins in 702.17μs
+[info] Found 2 Capacitor plugins for android:
+       @capacitor/filesystem@8.1.5
+       @capacitor/share@8.0.3
+✔ update android in 14.99ms
+✔ Syncing Gradle in 152.94μs
+[success] android platform added!
+Follow the Developer Workflow guide to get building:
+https://capacitorjs.com/docs/basics/workflow
+[log] xml(load) at /home/runner/work/ikigai/ikigai/android/app/src/main/AndroidManifest.xml
+[log] xml(load) Found root namespaces in XML file: http://schemas.android.com/apk/res/android
+Generating assets for android
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-ldpi/ic_launcher.png (842 B)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-mdpi/ic_launcher.png (1.35 KB)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-hdpi/ic_launcher.png (2.49 KB)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png (3.33 KB)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png (5.12 KB)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png (6.98 KB)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-ldpi/ic_launcher_round.png (1.7 KB)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png (2.19 KB)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png (3.24 KB)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png (4.04 KB)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png (5.92 KB)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png (7.85 KB)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-ldpi/ic_launcher_foreground.png (719 B)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png (930 B)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png (1.31 KB)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png (1.74 KB)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png (2.52 KB)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png (3.31 KB)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-ldpi/ic_launcher_background.png (161 B)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-mdpi/ic_launcher_background.png (211 B)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-hdpi/ic_launcher_background.png (301 B)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-xhdpi/ic_launcher_background.png (425 B)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_background.png (835 B)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_background.png (1.12 KB)
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+CREATE android icon /home/runner/work/ikigai/ikigai/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+CREATE android splash /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable/splash.png (8.71 KB)
+CREATE android splash /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-land-ldpi/splash.png (5.34 KB)
+CREATE android splash /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-land-mdpi/splash.png (8.94 KB)
+CREATE android splash /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-land-hdpi/splash.png (16.87 KB)
+CREATE android splash /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-land-xhdpi/splash.png (32.31 KB)
+CREATE android splash /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-land-xxhdpi/splash.png (47.97 KB)
+CREATE android splash /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-land-xxxhdpi/splash.png (70.16 KB)
+CREATE android splash /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-port-ldpi/splash.png (5.5 KB)
+CREATE android splash /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-port-mdpi/splash.png (8.71 KB)
+CREATE android splash /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-port-hdpi/splash.png (17.39 KB)
+CREATE android splash /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-port-xhdpi/splash.png (34.21 KB)
+CREATE android splash /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-port-xxhdpi/splash.png (48.61 KB)
+CREATE android splash /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-port-xxxhdpi/splash.png (70.56 KB)
+CREATE android splash-dark /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-night/splash.png (5.34 KB)
+CREATE android splash-dark /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-land-night-ldpi/splash.png (5.34 KB)
+CREATE android splash-dark /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-land-night-mdpi/splash.png (8.94 KB)
+CREATE android splash-dark /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-land-night-hdpi/splash.png (16.87 KB)
+CREATE android splash-dark /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-land-night-xhdpi/splash.png (32.31 KB)
+CREATE android splash-dark /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-land-night-xxhdpi/splash.png (47.97 KB)
+CREATE android splash-dark /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-land-night-xxxhdpi/splash.png (70.16 KB)
+CREATE android splash-dark /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-port-night-ldpi/splash.png (5.5 KB)
+CREATE android splash-dark /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-port-night-mdpi/splash.png (8.71 KB)
+CREATE android splash-dark /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-port-night-hdpi/splash.png (17.39 KB)
+CREATE android splash-dark /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-port-night-xhdpi/splash.png (34.21 KB)
+CREATE android splash-dark /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-port-night-xxhdpi/splash.png (48.61 KB)
+CREATE android splash-dark /home/runner/work/ikigai/ikigai/android/app/src/main/res/drawable-port-night-xxxhdpi/splash.png (70.56 KB)
+
+
+Totals:
+android: 74 generated, 805.7 KB total
+✔ Copying web assets from web to android/app/src/main/assets/public in 9.28ms
+✔ Creating capacitor.config.json in android/app/src/main/assets in 580.86μs
+✔ copy android in 15.86ms
+✔ Updating Android plugins in 657.56μs
+[info] Found 2 Capacitor plugins for android:
+       @capacitor/filesystem@8.1.5
+       @capacitor/share@8.0.3
+✔ update android in 20.61ms
+[info] Sync finished in 0.05s
+Downloading https://services.gradle.org/distributions/gradle-8.14.3-all.zip
+.....................10%.....................20%......................30%.....................40%......................50%.....................60%.....................70%......................80%.....................90%......................100%
+
+Welcome to Gradle 8.14.3!
+
+Here are the highlights of this release:
+ - Java 24 support
+ - GraalVM Native Image toolchain selection
+ - Enhancements to test reporting
+ - Build Authoring improvements
+
+For more details see https://docs.gradle.org/8.14.3/release-notes.html
+
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :app
+WARNING: Using flatDir should be avoided because it doesn't support any meta-data formats.
+
+> Configure project :capacitor-cordova-android-plugins
+WARNING: Using flatDir should be avoided because it doesn't support any meta-data formats.
+
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preReleaseBuild UP-TO-DATE
+> Task :app:mergeReleaseJniLibFolders
+> Task :capacitor-android:preBuild UP-TO-DATE
+> Task :capacitor-android:preReleaseBuild UP-TO-DATE
+> Task :capacitor-android:mergeReleaseJniLibFolders
+> Task :capacitor-android:mergeReleaseNativeLibs NO-SOURCE
+> Task :capacitor-cordova-android-plugins:preBuild UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:preReleaseBuild UP-TO-DATE
+> Task :capacitor-android:copyReleaseJniLibsProjectOnly
+> Task :capacitor-cordova-android-plugins:mergeReleaseJniLibFolders
+> Task :capacitor-cordova-android-plugins:mergeReleaseNativeLibs NO-SOURCE
+> Task :capacitor-filesystem:preBuild UP-TO-DATE
+> Task :capacitor-filesystem:preReleaseBuild UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:copyReleaseJniLibsProjectOnly
+> Task :capacitor-filesystem:mergeReleaseJniLibFolders
+> Task :capacitor-filesystem:mergeReleaseNativeLibs NO-SOURCE
+> Task :capacitor-share:preBuild UP-TO-DATE
+> Task :capacitor-share:preReleaseBuild UP-TO-DATE
+> Task :capacitor-filesystem:copyReleaseJniLibsProjectOnly
+> Task :capacitor-share:mergeReleaseJniLibFolders
+> Task :capacitor-share:mergeReleaseNativeLibs NO-SOURCE
+> Task :capacitor-share:copyReleaseJniLibsProjectOnly
+> Task :capacitor-android:generateReleaseResValues
+> Task :app:mergeReleaseNativeLibs NO-SOURCE
+> Task :app:stripReleaseDebugSymbols NO-SOURCE
+> Task :app:extractReleaseNativeSymbolTables NO-SOURCE
+> Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :capacitor-android:generateReleaseResources
+> Task :capacitor-android:packageReleaseResources
+> Task :capacitor-android:processReleaseNavigationResources
+> Task :capacitor-filesystem:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :capacitor-filesystem:generateReleaseResValues
+> Task :capacitor-android:javaPreCompileRelease
+> Task :capacitor-filesystem:generateReleaseResources
+> Task :capacitor-filesystem:packageReleaseResources
+> Task :capacitor-filesystem:processReleaseNavigationResources
+> Task :capacitor-filesystem:javaPreCompileRelease
+> Task :capacitor-share:generateReleaseResValues
+> Task :capacitor-share:generateReleaseResources
+> Task :capacitor-share:packageReleaseResources
+> Task :capacitor-filesystem:parseReleaseLocalResources
+> Task :capacitor-share:processReleaseNavigationResources
+> Task :capacitor-android:parseReleaseLocalResources
+> Task :capacitor-share:javaPreCompileRelease
+> Task :capacitor-share:parseReleaseLocalResources
+> Task :capacitor-cordova-android-plugins:generateReleaseResValues
+> Task :capacitor-cordova-android-plugins:generateReleaseResources
+> Task :capacitor-share:generateReleaseRFile
+> Task :capacitor-android:generateReleaseRFile
+> Task :capacitor-filesystem:generateReleaseRFile
+> Task :capacitor-cordova-android-plugins:packageReleaseResources
+
+> Task :capacitor-android:compileReleaseJavaWithJavac
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+> Task :capacitor-cordova-android-plugins:processReleaseNavigationResources
+> Task :capacitor-cordova-android-plugins:javaPreCompileRelease
+> Task :capacitor-cordova-android-plugins:parseReleaseLocalResources
+> Task :capacitor-android:bundleLibRuntimeToDirRelease
+> Task :capacitor-android:bundleLibCompileToJarRelease
+> Task :app:checkReleaseDuplicateClasses
+> Task :capacitor-share:compileReleaseJavaWithJavac
+> Task :capacitor-share:bundleLibRuntimeToDirRelease
+> Task :app:javaPreCompileRelease
+> Task :capacitor-cordova-android-plugins:generateReleaseRFile
+> Task :capacitor-android:writeReleaseAarMetadata
+> Task :capacitor-cordova-android-plugins:compileReleaseJavaWithJavac NO-SOURCE
+> Task :capacitor-cordova-android-plugins:bundleLibRuntimeToDirRelease
+> Task :capacitor-cordova-android-plugins:writeReleaseAarMetadata
+> Task :capacitor-filesystem:writeReleaseAarMetadata
+> Task :capacitor-share:writeReleaseAarMetadata
+> Task :app:checkReleaseAarMetadata
+> Task :app:processReleaseNavigationResources
+> Task :app:generateReleaseResValues
+> Task :app:compileReleaseNavigationResources
+> Task :app:mapReleaseSourceSetPaths
+> Task :app:generateReleaseResources
+> Task :app:packageReleaseResources
+> Task :app:createReleaseCompatibleScreenManifests
+> Task :app:extractDeepLinksRelease
+> Task :capacitor-android:extractDeepLinksRelease
+> Task :app:parseReleaseLocalResources
+> Task :capacitor-cordova-android-plugins:extractDeepLinksRelease
+> Task :capacitor-android:processReleaseManifest
+> Task :capacitor-filesystem:extractDeepLinksRelease
+> Task :capacitor-cordova-android-plugins:processReleaseManifest
+> Task :capacitor-share:extractDeepLinksRelease
+> Task :capacitor-filesystem:processReleaseManifest
+> Task :capacitor-share:processReleaseManifest
+> Task :capacitor-android:compileReleaseLibraryResources
+> Task :app:mergeReleaseResources
+> Task :app:processReleaseMainManifest
+> Task :app:processReleaseManifest
+> Task :capacitor-cordova-android-plugins:compileReleaseLibraryResources
+> Task :capacitor-filesystem:compileReleaseLibraryResources
+> Task :app:processReleaseManifestForPackage
+> Task :capacitor-share:compileReleaseLibraryResources
+> Task :capacitor-cordova-android-plugins:bundleLibCompileToJarRelease
+> Task :capacitor-share:bundleLibCompileToJarRelease
+> Task :app:desugarReleaseFileDependencies
+> Task :app:mergeReleaseStartupProfile
+> Task :capacitor-filesystem:compileReleaseKotlin
+> Task :app:processReleaseResources
+> Task :capacitor-filesystem:compileReleaseJavaWithJavac NO-SOURCE
+> Task :capacitor-android:prepareReleaseArtProfile
+> Task :capacitor-cordova-android-plugins:prepareReleaseArtProfile
+> Task :capacitor-filesystem:bundleLibCompileToJarRelease
+> Task :capacitor-filesystem:prepareReleaseArtProfile
+> Task :capacitor-filesystem:bundleLibRuntimeToDirRelease
+> Task :app:compileReleaseJavaWithJavac
+> Task :app:dexBuilderRelease
+> Task :capacitor-share:prepareReleaseArtProfile
+> Task :app:mergeReleaseArtProfile
+> Task :capacitor-filesystem:bundleLibRuntimeToJarRelease
+> Task :capacitor-share:bundleLibRuntimeToJarRelease
+> Task :capacitor-android:bundleLibRuntimeToJarRelease
+> Task :capacitor-cordova-android-plugins:bundleLibRuntimeToJarRelease
+> Task :app:mergeReleaseShaders
+> Task :app:compileReleaseShaders NO-SOURCE
+> Task :app:generateReleaseAssets UP-TO-DATE
+> Task :capacitor-android:mergeReleaseShaders
+> Task :capacitor-android:compileReleaseShaders NO-SOURCE
+> Task :capacitor-android:generateReleaseAssets UP-TO-DATE
+> Task :capacitor-android:mergeReleaseAssets
+> Task :capacitor-cordova-android-plugins:mergeReleaseShaders
+> Task :capacitor-cordova-android-plugins:compileReleaseShaders NO-SOURCE
+> Task :capacitor-cordova-android-plugins:generateReleaseAssets UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:mergeReleaseAssets
+> Task :capacitor-filesystem:mergeReleaseShaders
+> Task :capacitor-filesystem:compileReleaseShaders NO-SOURCE
+> Task :capacitor-filesystem:generateReleaseAssets UP-TO-DATE
+> Task :capacitor-filesystem:mergeReleaseAssets
+> Task :capacitor-share:mergeReleaseShaders
+> Task :capacitor-share:compileReleaseShaders NO-SOURCE
+> Task :capacitor-share:generateReleaseAssets UP-TO-DATE
+> Task :capacitor-share:mergeReleaseAssets
+> Task :app:mergeReleaseAssets
+> Task :app:compressReleaseAssets
+> Task :app:extractReleaseVersionControlInfo
+> Task :app:extractProguardFiles
+> Task :capacitor-android:processReleaseJavaRes NO-SOURCE
+> Task :capacitor-android:createFullJarRelease
+> Task :capacitor-android:extractProguardFiles
+> Task :app:mergeExtDexRelease
+> Task :capacitor-android:generateReleaseLintModel
+> Task :app:mergeReleaseGlobalSynthetics
+> Task :capacitor-cordova-android-plugins:processReleaseJavaRes NO-SOURCE
+> Task :capacitor-android:prepareLintJarForPublish
+> Task :capacitor-cordova-android-plugins:createFullJarRelease
+> Task :capacitor-cordova-android-plugins:extractProguardFiles
+> Task :capacitor-cordova-android-plugins:generateReleaseLintModel
+> Task :capacitor-cordova-android-plugins:prepareLintJarForPublish
+> Task :capacitor-filesystem:processReleaseJavaRes
+> Task :capacitor-filesystem:createFullJarRelease
+> Task :capacitor-filesystem:extractProguardFiles
+> Task :capacitor-filesystem:generateReleaseLintModel
+> Task :capacitor-filesystem:prepareLintJarForPublish
+> Task :capacitor-share:processReleaseJavaRes NO-SOURCE
+> Task :capacitor-share:createFullJarRelease
+> Task :capacitor-share:extractProguardFiles
+> Task :capacitor-share:generateReleaseLintModel
+> Task :capacitor-share:prepareLintJarForPublish
+> Task :app:generateReleaseLintVitalReportModel
+> Task :capacitor-filesystem:stripReleaseDebugSymbols NO-SOURCE
+> Task :capacitor-filesystem:checkReleaseAarMetadata
+> Task :capacitor-filesystem:copyReleaseJniLibsProjectAndLocalJars
+> Task :capacitor-filesystem:extractDeepLinksForAarRelease
+> Task :app:mergeDexRelease
+> Task :capacitor-filesystem:extractReleaseAnnotations
+> Task :capacitor-filesystem:mergeReleaseGeneratedProguardFiles
+> Task :capacitor-filesystem:mergeReleaseConsumerProguardFiles
+> Task :capacitor-share:stripReleaseDebugSymbols NO-SOURCE
+> Task :capacitor-share:checkReleaseAarMetadata
+> Task :capacitor-share:extractDeepLinksForAarRelease
+> Task :capacitor-share:copyReleaseJniLibsProjectAndLocalJars
+> Task :capacitor-share:extractReleaseAnnotations
+> Task :capacitor-share:mergeReleaseGeneratedProguardFiles
+> Task :capacitor-share:mergeReleaseConsumerProguardFiles
+> Task :capacitor-android:checkReleaseAarMetadata
+> Task :capacitor-android:stripReleaseDebugSymbols NO-SOURCE
+> Task :capacitor-android:copyReleaseJniLibsProjectAndLocalJars
+> Task :capacitor-android:extractDeepLinksForAarRelease
+> Task :capacitor-share:mergeReleaseJavaResource
+> Task :capacitor-android:extractReleaseAnnotations
+> Task :capacitor-filesystem:mergeReleaseJavaResource
+> Task :capacitor-share:syncReleaseLibJars
+> Task :capacitor-filesystem:syncReleaseLibJars
+> Task :capacitor-filesystem:bundleReleaseLocalLintAar
+> Task :capacitor-share:bundleReleaseLocalLintAar
+> Task :capacitor-android:mergeReleaseGeneratedProguardFiles
+> Task :capacitor-android:mergeReleaseConsumerProguardFiles
+> Task :capacitor-android:mergeReleaseJavaResource
+> Task :capacitor-cordova-android-plugins:checkReleaseAarMetadata
+> Task :app:compileReleaseArtProfile
+> Task :capacitor-android:syncReleaseLibJars
+> Task :capacitor-android:bundleReleaseLocalLintAar
+> Task :capacitor-cordova-android-plugins:stripReleaseDebugSymbols NO-SOURCE
+> Task :capacitor-cordova-android-plugins:copyReleaseJniLibsProjectAndLocalJars
+> Task :capacitor-cordova-android-plugins:extractDeepLinksForAarRelease
+> Task :capacitor-cordova-android-plugins:extractReleaseAnnotations
+> Task :capacitor-cordova-android-plugins:mergeReleaseGeneratedProguardFiles
+> Task :capacitor-cordova-android-plugins:mergeReleaseConsumerProguardFiles
+> Task :capacitor-cordova-android-plugins:mergeReleaseJavaResource
+> Task :capacitor-cordova-android-plugins:syncReleaseLibJars
+> Task :capacitor-cordova-android-plugins:bundleReleaseLocalLintAar
+> Task :capacitor-android:writeReleaseLintModelMetadata
+> Task :capacitor-cordova-android-plugins:writeReleaseLintModelMetadata
+> Task :capacitor-filesystem:writeReleaseLintModelMetadata
+> Task :capacitor-share:writeReleaseLintModelMetadata
+> Task :capacitor-android:generateReleaseLintVitalModel
+> Task :capacitor-cordova-android-plugins:generateReleaseLintVitalModel
+> Task :capacitor-filesystem:generateReleaseLintVitalModel
+> Task :capacitor-share:generateReleaseLintVitalModel
+> Task :app:processReleaseJavaRes NO-SOURCE
+> Task :app:optimizeReleaseResources
+> Task :app:collectReleaseDependencies
+> Task :app:sdkReleaseDependencyData
+> Task :app:writeReleaseAppMetadata
+> Task :app:writeReleaseSigningConfigVersions
+> Task :capacitor-android:bundleReleaseAar
+> Task :capacitor-android:mapReleaseSourceSetPaths
+> Task :app:mergeReleaseJavaResource
+> Task :capacitor-android:mergeReleaseResources
+> Task :capacitor-cordova-android-plugins:bundleReleaseAar
+> Task :capacitor-cordova-android-plugins:mapReleaseSourceSetPaths
+> Task :capacitor-android:verifyReleaseResources
+> Task :capacitor-cordova-android-plugins:mergeReleaseResources
+> Task :capacitor-android:assembleRelease
+> Task :capacitor-filesystem:bundleReleaseAar
+> Task :capacitor-filesystem:mapReleaseSourceSetPaths
+> Task :capacitor-filesystem:mergeReleaseResources
+> Task :capacitor-cordova-android-plugins:verifyReleaseResources
+> Task :capacitor-cordova-android-plugins:assembleRelease
+> Task :capacitor-share:bundleReleaseAar
+> Task :capacitor-share:mapReleaseSourceSetPaths
+> Task :capacitor-filesystem:verifyReleaseResources
+> Task :capacitor-share:mergeReleaseResources
+> Task :capacitor-filesystem:assembleRelease
+> Task :capacitor-share:verifyReleaseResources
+> Task :capacitor-share:assembleRelease
+> Task :capacitor-cordova-android-plugins:lintVitalAnalyzeRelease
+> Task :capacitor-android:lintVitalAnalyzeRelease
+> Task :capacitor-share:lintVitalAnalyzeRelease
+> Task :capacitor-filesystem:lintVitalAnalyzeRelease
+> Task :app:lintVitalAnalyzeRelease
+> Task :app:lintVitalReportRelease
+> Task :app:lintVitalRelease
+> Task :app:packageRelease
+> Task :app:createReleaseApkListingFileRedirect
+> Task :app:assembleRelease
+
+[Incubating] Problems report is available at: file:///home/runner/work/ikigai/ikigai/android/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 1m 50s
+204 actionable tasks: 204 executed
+total 4232
+drwxr-xr-x  2 runner runner    4096 Nov 22 20:44 .
+drwxr-xr-x 14 runner runner    4096 Nov 22 20:44 ..
+-rw-r--r--  1 runner runner 4279126 Nov 22 20:44 Ikigai-v1.1.0-android.apk
+-rw-r--r--  1 runner runner   43500 Nov 22 20:44 Ikigai-v1.1.0-android.apk.idsig
