@@ -1,0 +1,20 @@
+{
+  "identifier": "default",
+  "description": "Permisos mínimos: escribir respaldos en Documentos/Ikigai y exportes en Descargas.",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "fs:allow-mkdir",
+    "fs:allow-write-text-file",
+    "fs:allow-write-file",
+    "fs:allow-remove",
+    {
+      "identifier": "fs:scope",
+      "allow": [
+        { "path": "$DOCUMENT/Ikigai" },
+        { "path": "$DOCUMENT/Ikigai/**" },
+        { "path": "$DOWNLOAD/*" }
+      ]
+    }
+  ]
+}

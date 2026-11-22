@@ -1,0 +1,9 @@
+node_modules/
+android/
+dist/
+build.log
+src-tauri/target/
+src-tauri/gen/
+src-tauri/icons/
+*.jks
+*.keystore

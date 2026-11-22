@@ -1,0 +1,7 @@
+{
+  "appId": "com.kevinruiz.ikigai",
+  "appName": "Ikigai",
+  "webDir": "web",
+  "server": { "androidScheme": "https" },
+  "android": { "allowMixedContent": false, "webContentsDebuggingEnabled": false }
+}
