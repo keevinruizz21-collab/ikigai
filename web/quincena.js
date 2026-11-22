@@ -1630,7 +1630,7 @@ function bindCfg(el){
   if(path.startsWith('pagos.')){ const pf=d.perfiles.find(p=>p.id===S.editPf)||d.perfiles[0]; for(const b of d.bolsillos){ const pv=$(`[data-prev="${b.id}"]`); if(pv) pv.textContent=pctPreview(+pf.pct[b.id]||0,d); } }
 }
 
-window.QZ={S,EXT,render,scheduleRender,route,buildShell,setSync,enqueue,withRetry,toast:(typeof toast==='function'?toast:function(){}),ic,esc,IC};
+window.QZ={S,EXT,render,scheduleRender,route,buildShell,setSync,enqueue,withRetry,toast:(typeof toast==='function'?toast:function(){}),ic,esc,IC,metaStats,money};
 /* ---------------- Inicio de la app ---------------- */
 if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
 })();

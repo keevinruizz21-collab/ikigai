@@ -1,6 +1,6 @@
 [package]
 name = "ikigai"
-version = "1.0.1"
+version = "1.1.0"
 description = "Ikigai: finanzas y entreno"
 edition = "2021"
 

@@ -9,6 +9,7 @@ primero guarda sus fuentes en source/. Luego, desde source/, genera:
   web/index.html   (Quincena + núcleo de Ikigai + CSP estricta)
   web/quincena.js  (el script de Quincena, fuera del HTML para no permitir scripts en línea)
   web/entreno.js   (módulo de entreno sin la sección de exportación)
+  web/estilo.js    (módulo de estilo: biblioteca de ropa, muñeco y guía)
   web/sw.js        (service worker con la lista de archivos para uso sin internet)
 """
 import hashlib, json, os, re, sys, time
@@ -72,6 +73,9 @@ ent = read(os.path.join(SRC, 'entreno.js'))
 ent, n = re.subn(r'\n\s*<section class="panel stack"><h2>Llevar a la app local</h2>.*?</section>', '', ent, flags=re.S)
 ent = ent.replace("if(!F.demo) prefetchCode();", "").replace('<span class="brand-mark">8·S</span><span class="brand-name">Entreno</span>', BRAND_I)
 write(os.path.join(WEB, 'entreno.js'), ent)
+
+# 4b. Estilo (biblioteca de ropa, muñeco y guía) tal cual
+write(os.path.join(WEB, 'estilo.js'), read(os.path.join(SRC, 'estilo.js')))
 
 # 5. Service worker con todos los archivos y una versión por contenido
 files, h = [], hashlib.sha256()

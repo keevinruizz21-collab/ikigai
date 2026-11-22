@@ -1,6 +1,6 @@
 # Ikigai 生
 
-Tus finanzas (Quincena) y tu entreno en una sola app que **funciona sin internet** y se **sincroniza sola** con tu Supabase cuando vuelve la conexión.
+Tus finanzas (Quincena), tu entreno y tu estilo en una sola app que **funciona sin internet** y se **sincroniza sola** con tu Supabase cuando vuelve la conexión.
 
 | Versión | Dónde se obtiene |
 |---|---|

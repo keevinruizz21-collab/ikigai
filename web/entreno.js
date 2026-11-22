@@ -32,6 +32,7 @@ const DAYS=56;
 /* ---------------- íconos ---------------- */
 const FIC={
   fit:'<svg viewBox="0 0 24 24"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9.5v5M20.5 9.5v5M6.5 12h11"/></svg>',
+  sty:'<svg viewBox="0 0 24 24"><path d="M12 7.4V6.6a1.9 1.9 0 1 1 1.9-1.9"/><path d="M12 7.4 3.3 13.8a1.3 1.3 0 0 0 .8 2.3h15.8a1.3 1.3 0 0 0 .8-2.3z"/></svg>',
   fin:'<svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10.5h18M15.5 15h2.5"/></svg>',
   hoy:'<svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg>',
   cal:'<svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>',
@@ -187,7 +188,7 @@ const KEGEL_HOW=[
    ========================================================= */
 const F={ready:false,started:false,demo:false,err:null,slow:false,hasCfg:false,
   cfg:{inicio:DEF_START,tests:{t1:{},t8:{}},med:{}}, logs:{},
-  day:null, keepDay:false, calM:null, calSel:null, plW:null, lastFit:'entreno', lastFin:'inicio'};
+  day:null, keepDay:false, calM:null, calSel:null, plW:null, lastFit:'entreno', lastFin:'inicio', lastSty:'estilo'};
 let dbRef=null;
 
 function normCfg(c){
@@ -595,7 +596,7 @@ for(const [k,fn] of Object.entries(VIEWS)) EXT.views[k]=()=>{ try{ return fn(); 
    Navegación y selector de módulo
    ========================================================= */
 const NAV=[['entreno','hoy','Hoy'],['e-calendario','cal','Calendario'],['e-plan','plan','Plan'],['e-progreso','prog','Progreso'],['e-comida','food','Comida']];
-const switchHtml=()=>`<div class="modsw" role="group" aria-label="Módulo"><a href="#inicio" data-mod="fin" aria-label="Finanzas">${fic('fin')}<span class="ml">Finanzas</span></a><a href="#entreno" data-mod="fit" aria-label="Entreno">${fic('fit')}<span class="ml">Entreno</span></a></div>`;
+const switchHtml=()=>`<div class="modsw" role="group" aria-label="Módulo"><a href="#inicio" data-mod="fin" aria-label="Finanzas">${fic('fin')}<span class="ml">Finanzas</span></a><a href="#entreno" data-mod="fit" aria-label="Entreno">${fic('fit')}<span class="ml">Entreno</span></a><a href="#estilo" data-mod="sty" aria-label="Estilo">${fic('sty')}<span class="ml">Estilo</span></a></div>`;
 function buildFitNav(){
   const rail=$('#rail'), tab=$('#tabbar'); if(!rail||!tab) return;
   rail.innerHTML=`<div class="brand"><span class="brand-mark">生</span><span class="brand-name">Ikigai</span></div>${switchHtml()}${NAV.map(([v,i,l])=>`<a href="#${v}" data-nav="${v}">${fic(i)}${l}</a>`).join('')}<a href="#e-ajustes" data-nav="e-ajustes">${fic('gear')}Ajustes</a><div class="rail-foot">Se sincroniza entre tu celular y tu PC.</div>`;
@@ -603,8 +604,10 @@ function buildFitNav(){
 }
 let navMode=null, lastView=null;
 EXT.nav=function(view){
-  const fit=!!VIEWS[view], mode=fit?'fit':'fin';
+  const STY=QZ.STY, sty=!!(STY&&STY.views[view]);
+  const fit=!!VIEWS[view], mode=fit?'fit':sty?'sty':'fin';
   if(fit){ F.lastFit=view; if(view==='entreno'&&lastView!=='entreno'&&!F.keepDay) F.day=null; }
+  else if(sty) F.lastSty=view;
   else F.lastFin=view;
   F.keepDay=false; lastView=view;
   const top=$('.top-in');
@@ -612,11 +615,13 @@ EXT.nav=function(view){
   if(mode!==navMode){
     navMode=mode;
     if(fit) buildFitNav();
+    else if(sty) STY.buildNav(switchHtml());
     else { if(QZ.buildShell) QZ.buildShell(); const b=$('#rail .brand'); if(b) b.insertAdjacentHTML('afterend',switchHtml()); }
   }
-  for(const a of $$('.modsw a')){ const m=a.dataset.mod; a.setAttribute('aria-current',m===mode?'page':'false'); a.setAttribute('href',m==='fit'?'#'+F.lastFit:'#'+F.lastFin); }
-  const gear=$('.top a.iconbtn[aria-label="Ajustes"]'); if(gear) gear.setAttribute('href',fit?'#e-ajustes':'#ajustes');
+  for(const a of $$('.modsw a')){ const m=a.dataset.mod; a.setAttribute('aria-current',m===mode?'page':'false'); a.setAttribute('href',m==='fit'?'#'+F.lastFit:m==='sty'?'#'+F.lastSty:'#'+F.lastFin); }
+  const gear=$('.top a.iconbtn[aria-label="Ajustes"]'); if(gear){ gear.setAttribute('href',fit?'#e-ajustes':'#ajustes'); gear.hidden=sty; }
   if(fit) ensureData();
+  if(sty) STY.ensure();
 };
 
 /* =========================================================
@@ -699,12 +704,13 @@ const CSS=`
 .modsw a[aria-current="page"]{background:var(--panel);color:var(--ink);box-shadow:var(--shadow)}
 .modsw .ic svg{width:17px;height:17px}
 .top-in .brand{display:none}
-@media (max-width:460px){ .top-in:has(#monthSw:not([hidden])) .modsw .ml{display:none} .top-in:has(#monthSw:not([hidden])) .modsw a{padding:6px 9px} }
+@media (max-width:460px){ .top-in:has(#monthSw:not([hidden])) .modsw .ml{display:none} .top-in:has(#monthSw:not([hidden])) .modsw a{padding:6px 7px} .top-in:has(#monthSw:not([hidden])){gap:8px} }
+@media (max-width:560px){ .top .modsw a:not([aria-current="page"]) .ml{display:none} }
 .en .chip{cursor:default}
 .en .chip:hover{border-color:var(--line-2)}
 @media (min-width:980px){ .top .modsw{display:none} }
-.rail .modsw{display:grid;grid-template-columns:1fr 1fr;margin:0 0 14px}
-.rail .modsw a{justify-content:center;padding:7px 6px;font-size:.84rem;color:var(--ink-2)}
+.rail .modsw{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0 0 14px}
+.rail .modsw a{justify-content:center;flex-direction:column;gap:2px;padding:6px 2px;font-size:.74rem;color:var(--ink-2)}
 .rail .modsw a:hover{background:transparent;color:var(--ink)}
 .rail .modsw a[aria-current="page"]{background:var(--panel);color:var(--ink)}
 .en-narrow{max-width:900px!important}
