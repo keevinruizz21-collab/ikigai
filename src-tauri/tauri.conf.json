@@ -1,6 +1,6 @@
 {
   "productName": "Ikigai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "identifier": "com.kevinruiz.ikigai",
   "build": { "frontendDist": "../web" },
   "app": {

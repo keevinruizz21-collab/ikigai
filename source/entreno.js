@@ -51,72 +51,74 @@ const fic=(n,cls)=>`<span class="ic${cls?' '+cls:''}" aria-hidden="true">${FIC[n
 const TAG={barra:'BARRA',paral:'PARALELAS',manc:'MANCUERNA',ext:'BARRA + DISCOS',suelo:'SUELO',cuerpo:'CUERPO'};
 
 const SES={
-  A:{n:'Empuje + pierna',hora:'5:05 am',dur:'40–45 min',c:'var(--s2)',wu:'am',cd:'A',blocks:[
-    {t:'Isométricos de tendón',note:'Superserie: uno y luego el otro, 30 s de pausa entre ellos. Esfuerzo 7/10, sin llegar a temblar.',items:[
-      {id:'a1',n:'Sentadilla isométrica en pared',tag:'cuerpo',f1:{s:3,r:'30 s'},f2:{s:3,r:'45 s'},tip:'Muslos paralelos al suelo, espalda pegada a la pared, peso en los talones.'},
-      {id:'a2',n:'Soporte arriba en paralelas',tag:'paral',f1:{s:3,r:'20 s'},f2:{s:3,r:'30 s'},tip:'Brazos bloqueados, hombros lejos de las orejas, cuerpo quieto.'}]},
-    {t:'Bloque 1 · fuerza',note:'Superserie: fondos, búlgaras y 75 s de pausa.',items:[
-      {id:'a3',n:'Fondos en paralelas',tag:'paral',main:1,f1:{s:3,r:'6–8',v:'Tempo 3-1-1: bajas en 3 s'},f2:{s:4,r:'5–6',v:'Con lastre de 4–6 kg en la mochila'},tip:'Bajas hasta que el codo quede a 90°, pecho un poco adelante, hombros abajo.'},
-      {id:'a4',n:'Sentadilla búlgara',tag:'manc',main:1,f1:{s:3,r:'8–10 c/pierna',v:'2 mancuernas de 5,5–7 kg'},f2:{s:3,r:'6–8 c/pierna',v:'2 mancuernas de 10 kg, tempo 3-1-1'},tip:'Pie de atrás sobre la cama o una silla. La rodilla de adelante sigue la punta del pie.'}]},
-    {t:'Bloque 2 · fuerza',note:'Superserie: flexiones, peso muerto y 60 s de pausa.',items:[
-      {id:'a5',n:'Flexiones',tag:'cuerpo',f1:{s:3,r:'7–9',v:'Pausa de 1 s abajo'},f2:{s:3,r:'8–10',v:'Declinadas: pies sobre una silla'},tip:'Cuerpo recto de talón a cabeza, codos a 45° del tronco.'},
-      {id:'a6',n:'Peso muerto rumano a una pierna',tag:'manc',f1:{s:3,r:'8 c/pierna',v:'1 mancuerna de ~7 kg en la mano contraria'},f2:{s:3,r:'10 c/pierna',v:'1 mancuerna de 10 kg, bajas en 3 s'},tip:'Cadera hacia atrás y espalda neutra. Trabaja isquios y equilibrio.'}]},
-    {t:'Hombro y tendón de Aquiles',note:'60 s de pausa.',items:[
-      {id:'a7',n:'Flexiones en V (pike)',tag:'cuerpo',f1:{s:3,r:'6–8'},f2:{s:3,r:'6–8',v:'Pies elevados en una silla'},tip:'Cadera arriba; la cabeza baja entre las manos formando un triángulo. Es la base de la parada de manos.'},
-      {id:'a8',n:'Elevación de talón a una pierna',tag:'cuerpo',f1:{s:2,r:'12–15 c/lado',v:'Tempo 2-2-2'},f2:{s:3,r:'15 c/lado',v:'Con 1 mancuerna'},tip:'En el borde de un escalón si puedes: sube en 2 s, sostén 2 s, baja en 2 s.'}]}
+  A:{n:'Superior 1 · Fuerza',hora:'5:05 am',dur:'40–45 min',c:'var(--s2)',wu:'am',cd:'A',blocks:[
+    {t:'Bloque 1 · fuerza vertical',note:'Superserie: supina, fondos y 90 s de pausa. Lastre: discos en la mochila, envueltos en una toalla.',items:[
+      {id:'a1',n:'Dominada supina con lastre',tag:'barra',main:1,f1:{s:4,r:'5–7',v:'Mochila con ~4 kg'},f2:{s:4,r:'5–7',v:'Mochila con 8–10 kg'},tip:'Desde brazos totalmente estirados hasta la barbilla sobre la barra, sin balanceo. Si sacas 7 en todas las series, súbele 1–2 kg.'},
+      {id:'a2',n:'Fondos con lastre',tag:'paral',main:1,f1:{s:4,r:'5–7',v:'Mochila con ~6 kg'},f2:{s:4,r:'5–7',v:'Mochila con 10–12 kg'},tip:'Codo a 90° abajo, pecho un poco adelante, hombros lejos de las orejas.'}]},
+    {t:'Bloque 2 · meta: dominada prona',note:'Superserie, 75 s de pausa.',items:[
+      {id:'a3',n:'Dominada prona al ancho de hombros',tag:'barra',main:1,f1:{s:4,r:'3–5',v:'Si no salen: negativas de 5 s (subes con un salto)'},f2:{s:4,r:'4–6',v:'Si ya sacas 6: con 2 kg de lastre'},tip:'Palmas al frente y manos al ancho de los hombros, no abiertas. Rep completa o negativa, nunca a medias.'},
+      {id:'a4',n:'Flexiones en V (pike) con pies elevados',tag:'cuerpo',f1:{s:3,r:'6–8',v:'Pies sobre una silla'},f2:{s:3,r:'3–5',v:'Negativas de flexión en parada de manos, contra la pared'},tip:'Cadera arriba; la cabeza baja entre las manos formando un triángulo. Es la base de la parada de manos.'}]},
+    {t:'Bloque 3 · espalda media y hombro',note:'Superserie, 60 s de pausa.',items:[
+      {id:'a5',n:'Remo con barra',tag:'ext',f1:{s:3,r:'8–10',v:'Barra con extensor (~20 kg), pausa de 1 s arriba'},f2:{s:3,r:'10',v:'Pausa de 2 s arriba'},tip:'Torso a 45°, espalda neutra; lleva la barra al ombligo.'},
+      {id:'a6',n:'Elevaciones laterales',tag:'manc',f1:{s:3,r:'12–15',v:'~3–4 kg por mano'},f2:{s:4,r:'12–15',v:'Pausa de 1 s arriba'},tip:'Codos suaves y un poco adelante del cuerpo; subes hasta la altura del hombro, sin impulso.'}]},
+    {t:'Abdomen',note:'',items:[
+      {id:'a7',n:'Hollow body (fase 2: L-sit)',tag:'suelo',f1:{s:3,r:'30 s'},f2:{s:4,r:'10 s',v:'L-sit en paralelas: recogido o con una pierna estirada'},tip:'Hollow: lumbar pegada al suelo. L-sit: brazos bloqueados y hombros abajo. Exhala y activa suave el suelo pélvico.'}]}
   ]},
-  B:{n:'Tracción + core',hora:'5:05 am',dur:'40–45 min',c:'var(--s1)',wu:'am',cd:'B',blocks:[
-    {t:'Isométricos de tendón',note:'Superserie, 30 s de pausa entre ejercicios.',items:[
-      {id:'b1',n:'Colgado activo de la barra',tag:'barra',f1:{s:3,r:'30 s'},f2:{s:3,r:'45 s'},tip:'Agarre prono, escápulas hacia abajo, como sacando pecho.'},
-      {id:'b2',n:'Sostén arriba en dominada supina',tag:'barra',f1:{s:3,r:'10 s'},f2:{s:3,r:'15–20 s'},tip:'Barbilla sobre la barra y codos pegados. Sube con un salto si hace falta.'}]},
-    {t:'Bloque 1 · meta: dominada prona',note:'Superserie: dominada prona, hollow y 90 s de pausa.',items:[
-      {id:'b3',n:'Dominada prona (palmas al frente)',tag:'barra',main:1,f1:{s:4,r:'3 negativas de 5 s',v:'Subes con salto o desde una silla y bajas lento'},f2:{s:4,r:'1–3 reps + 2 negativas'},tip:'Agarre al ancho de los hombros, no abierto. Es la meta del bloque.'},
-      {id:'b4',n:'Hollow body',tag:'suelo',f1:{s:3,r:'20–30 s'},f2:{s:3,r:'40 s',v:'Brazos estirados sobre la cabeza'},tip:'Lumbar pegada al suelo. Exhala y activa suave el suelo pélvico.'}]},
-    {t:'Bloque 2 · fuerza',note:'Superserie: dominadas, remo y 75 s de pausa.',items:[
-      {id:'b5',n:'Dominadas supinas',tag:'barra',main:1,f1:{s:3,r:'8–10',v:'Tempo 3-1-1 con pausa de 1 s arriba'},f2:{s:4,r:'5–7',v:'Con lastre de 4–6 kg'},tip:'Desde brazos totalmente estirados, sin balanceo.'},
-      {id:'b6',n:'Remo con barra',tag:'ext',f1:{s:3,r:'10–12',v:'Barra con extensor (~20 kg), pausa de 1 s arriba'},f2:{s:3,r:'8–10',v:'Bajas en 3 s'},tip:'Torso a 45°, espalda neutra; lleva la barra al ombligo.'}]},
-    {t:'Bloque 3 · postura y core',note:'Superserie, 45 s de pausa.',items:[
-      {id:'b7',n:'Pájaros (aperturas invertidas)',tag:'manc',f1:{s:2,r:'12–15',v:'Mancuernas livianas (~3 kg)'},f2:{s:3,r:'12–15',v:'~4,5 kg'},tip:'Torso inclinado y codos suaves; aprieta entre las escápulas. Hombros sanos y buena postura.'},
-      {id:'b8',n:'Dead bug con exhalación',tag:'suelo',f1:{s:2,r:'8 c/lado'},f2:{s:3,r:'10 c/lado'},tip:'Exhala largo mientras estiras brazo y pierna contrarios; contrae suave el suelo pélvico.'}]},
-    {t:'Cierre',note:'',items:[
-      {id:'b9',n:'Puente de glúteo con suelo pélvico',tag:'suelo',f1:{s:2,r:'12',v:'Sostén 3 s arriba'},f2:{s:2,r:'8 c/pierna',v:'A una pierna'},tip:'Subes exhalando y contrayendo el suelo pélvico; bajas soltándolo por completo.'}]}
+  B:{n:'Inferior 1 · Cuádriceps y tendón',hora:'5:05 am',dur:'45–50 min',c:'var(--s1)',wu:'low',cd:'B',blocks:[
+    {t:'Potencia · con las piernas frescas',note:'Cada salto a máxima intención, 60 s de pausa. Si pierdes altura, para.',items:[
+      {id:'b1',n:'Sentadilla con salto',tag:'cuerpo',f1:{s:3,r:'5'},f2:{s:3,r:'5',v:'Busca más altura; aterriza en silencio'},tip:'Aterriza suave con las rodillas hacia afuera y vuelve a saltar solo cuando estés estable.'}]},
+    {t:'Isométrico de tendón · rodilla',note:'Esfuerzo alto (8/10): para el tendón, la intensidad importa. 45 s de pausa.',items:[
+      {id:'b2',n:'Sentadilla isométrica en pared',tag:'manc',f1:{s:4,r:'30–45 s',v:'1 mancuerna de ~10 kg sobre los muslos'},f2:{s:4,r:'30 s c/pierna',v:'A una pierna; la otra estirada al frente'},tip:'Muslos paralelos al suelo, espalda pegada a la pared, peso en los talones.'}]},
+    {t:'Bloque 1 · cuádriceps',note:'Superserie: búlgara con las dos piernas, Copenhague por los dos lados y 60 s de pausa.',items:[
+      {id:'b3',n:'Sentadilla búlgara',tag:'manc',main:1,f1:{s:4,r:'8–10 c/pierna',v:'2 mancuernas de ~10 kg, bajas en 3 s'},f2:{s:4,r:'6–8 c/pierna',v:'Con déficit: pie de adelante sobre un libro grueso o un escalón bajo'},tip:'Pie de atrás sobre la cama o una silla. La rodilla de adelante sigue la punta del pie.'},
+      {id:'b4',n:'Plancha Copenhague',tag:'suelo',f1:{s:3,r:'15–20 s c/lado',v:'Rodilla apoyada en la cama o una silla'},f2:{s:3,r:'25 s c/lado',v:'Pie apoyado'},tip:'Aductores fuertes protegen la ingle y las rodillas al correr.'}]},
+    {t:'Bloque 2 · una pierna y tobillo',note:'Superserie, 45 s de pausa.',items:[
+      {id:'b5',n:'Sentadilla a una pierna a la silla',tag:'cuerpo',main:1,f1:{s:3,r:'5–6 c/pierna',v:'Silla alta, bajas en 3 s'},f2:{s:3,r:'5 c/pierna',v:'Superficie más baja o pistol completo'},tip:'Progresión a pistol: te sientas controlado y te levantas sin impulso.'},
+      {id:'b6',n:'Elevación de talón a una pierna',tag:'manc',f1:{s:3,r:'12–15 c/lado',v:'1 mancuerna en la mano del mismo lado, tempo 2-2-2'},f2:{s:3,r:'15 c/lado',v:'En el borde de un escalón, con pausa de 2 s abajo'},tip:'Sube en 2 s, sostén 2 s y baja en 2 s. Gemelo y tendón de Aquiles fuertes para trotar.'}]},
+    {t:'Abdomen',note:'',items:[
+      {id:'b7',n:'Elevación de rodillas colgado',tag:'barra',f1:{s:3,r:'8–12',v:'Rodillas al pecho, sin balanceo'},f2:{s:3,r:'6–10',v:'Piernas rectas'},tip:'Al subir, enrolla la pelvis hacia arriba: ahí trabaja el abdomen, no solo la cadera. Bajas en 2 s.'}]}
   ]},
-  C:{n:'Potencia + intervalos',hora:'5:05 am',dur:'40–45 min',c:'var(--s4)',ci:'#231800',wu:'amj',cd:'C',blocks:[
-    {t:'Isométricos de tendón',note:'Superserie, 30 s de pausa.',items:[
-      {id:'c1',n:'Talón elevado sostenido a una pierna',tag:'cuerpo',f1:{s:3,r:'30 s c/lado'},f2:{s:3,r:'45 s c/lado'},tip:'Talón arriba a media altura. Protege el tendón de Aquiles para trotar.'},
-      {id:'c2',n:'Plancha lateral',tag:'suelo',f1:{s:2,r:'25 s c/lado'},f2:{s:2,r:'40 s c/lado'},tip:'Cadera alta y cuerpo en línea recta.'}]},
-    {t:'Potencia · empuje y salto',note:'Cada rep a máxima velocidad y sin fatiga. Superserie, 75 s de pausa.',items:[
-      {id:'c3',n:'Flexiones explosivas',tag:'cuerpo',main:1,f1:{s:4,r:'4–5',v:'Las manos despegan del suelo'},f2:{s:4,r:'5',v:'Con palmada'},tip:'Bajas controlado y subes lo más rápido posible. Si se vuelven lentas, para.'},
-      {id:'c4',n:'Sentadilla con salto',tag:'cuerpo',main:1,f1:{s:4,r:'5'},f2:{s:4,r:'5',v:'Con 2 mancuernas de ~3 kg'},tip:'Aterriza suave y en silencio, rodillas hacia afuera.'}]},
-    {t:'Potencia · tracción y cadera',note:'Superserie, 75 s de pausa.',items:[
-      {id:'c5',n:'Dominada supina explosiva',tag:'barra',f1:{s:3,r:'4'},f2:{s:4,r:'4'},tip:'Intenta llevar el pecho a la barra en cada rep; bajas controlado.'},
-      {id:'c6',n:'Swing con mancuerna',tag:'manc',f1:{s:3,r:'15',v:'1 mancuerna de ~10 kg'},f2:{s:3,r:'20'},tip:'El impulso sale del glúteo, no de los brazos. Revisa que los seguros estén apretados.'}]},
-    {t:'Intervalos sin cuerda',note:'Circuito en bucle: rodillas altas, escaladores, saltos laterales (skaters) y burpee sin flexión. Cabe en 2 × 2 m.',items:[
-      {id:'c7',n:'Intervalos en el sitio',tag:'cuerpo',unit:'rondas',f1:{s:6,r:'30 s de trabajo, 30 s de pausa'},f2:{s:8,r:'40 s de trabajo, 20 s de pausa'},tip:'Intensidad 8/10: hablar cuesta. Cambia de ejercicio en cada ronda.'}]}
+  C:{n:'Superior 2 · Volumen',hora:'5:05 am',dur:'40–45 min',c:'var(--s4)',ci:'#231800',wu:'am',cd:'C',blocks:[
+    {t:'Bloque 1 · empuje y tirón horizontal',note:'Superserie, 75 s de pausa.',items:[
+      {id:'c1',n:'Flexiones con mochila',tag:'cuerpo',main:1,f1:{s:4,r:'8–12',v:'Mochila con 5–8 kg; si sacas 12, súbele'},f2:{s:4,r:'5–6 c/lado',v:'Arqueras: el peso va a un brazo'},tip:'Cuerpo recto de talón a cabeza, codos a 45° del tronco, pecho a un puño del suelo.'},
+      {id:'c2',n:'Remo a una mano con mancuerna',tag:'manc',main:1,f1:{s:4,r:'12–15 c/lado',v:'~10 kg, pausa de 2 s arriba'},f2:{s:4,r:'12–15 c/lado',v:'Pausa de 3 s arriba y bajas en 3 s'},tip:'Mano y rodilla sobre la cama; lleva el codo hacia la cadera y aprieta la escápula.'}]},
+    {t:'Bloque 2 · volumen',note:'Superserie, 60 s de pausa.',items:[
+      {id:'c3',n:'Fondos tempo 3-1-1',tag:'paral',f1:{s:3,r:'10–12',v:'Sin lastre, bajas en 3 s'},f2:{s:3,r:'12–15'},tip:'Rango completo y sin rebotar abajo.'},
+      {id:'c4',n:'Dominada supina con bajada lenta',tag:'barra',f1:{s:3,r:'6–8',v:'Bajas en 4 s'},f2:{s:3,r:'8',v:'Bajas en 4 s'},tip:'Subes normal y bajas contando 4 s hasta estirar los brazos por completo.'}]},
+    {t:'Bloque 3 · brazos',note:'Superserie, 45 s de pausa.',items:[
+      {id:'c5',n:'Curl alterno con mancuernas',tag:'manc',f1:{s:3,r:'10–12 c/brazo',v:'~7 kg, sin balancear el torso'},f2:{s:3,r:'10 c/brazo',v:'Alterna martillo y supino en cada serie'},tip:'Codos pegados al cuerpo; subes en 1 s y bajas en 2 s.'},
+      {id:'c6',n:'Extensión de tríceps sobre la cabeza',tag:'manc',f1:{s:3,r:'10–12',v:'1 mancuerna de ~10 kg con las dos manos'},f2:{s:3,r:'12',v:'Bajas en 3 s'},tip:'Codos apuntando al techo y cerca de la cabeza; baja hasta sentir el estiramiento del tríceps.'}]},
+    {t:'Hombro posterior y abdomen',note:'Superserie, 30 s de pausa.',items:[
+      {id:'c7',n:'Pájaros (aperturas invertidas)',tag:'manc',f1:{s:2,r:'15',v:'~3 kg por mano'},f2:{s:3,r:'15'},tip:'Torso inclinado y codos suaves; aprieta entre las escápulas. Hombros sanos y buena postura.'},
+      {id:'c8',n:'Dead bug con exhalación',tag:'suelo',f1:{s:2,r:'10 c/lado'},f2:{s:3,r:'10 c/lado'},tip:'Exhala largo mientras estiras brazo y pierna contrarios; contrae suave el suelo pélvico.'}]}
   ]},
-  D:{n:'Habilidades + fuerza',hora:'En la mañana',dur:'~60 min',c:'var(--s5)',wu:'we',cd:'D',blocks:[
-    {t:'Habilidades',note:'Calidad antes que tiempo. 60 s de pausa.',items:[
-      {id:'d1',n:'Parada de manos contra la pared',tag:'cuerpo',f1:{s:5,r:'15–20 s',v:'Pecho a la pared, subiendo con los pies'},f2:{s:5,r:'30–40 s',v:'Más vertical, con toques de hombro asistidos'},tip:'Abdomen y glúteo apretados, empuja el suelo. Bajas caminando con las manos.'},
-      {id:'d2',n:'L-sit en paralelas',tag:'paral',f1:{s:5,r:'10 s',v:'Recogido: rodillas al pecho'},f2:{s:5,r:'10–15 s',v:'Una pierna estirada, alternando'},tip:'Brazos bloqueados, hombros abajo. Exhala.'}]},
-    {t:'Fuerza A',note:'Superserie, 90 s de pausa.',items:[
-      {id:'d3',n:'Dominada prona',tag:'barra',main:1,f1:{s:5,r:'1–2',v:'Si aún no sale: negativa de 5 s'},f2:{s:5,r:'2–3'},tip:'Agarre al ancho de los hombros. Rep perfecta o negativa, nunca a medias.'},
-      {id:'d4',n:'Sentadilla a una pierna a la silla',tag:'cuerpo',main:1,f1:{s:3,r:'5–6 c/pierna',v:'Silla alta, bajas en 3 s'},f2:{s:3,r:'5 c/pierna',v:'Superficie más baja o 1 mancuerna al frente'},tip:'Progresión a pistol: te sientas controlado y te levantas sin impulso.'}]},
-    {t:'Fuerza B',note:'Superserie, 75 s de pausa.',items:[
-      {id:'d5',n:'Fondos en paralelas',tag:'paral',f1:{s:3,r:'8–10'},f2:{s:4,r:'6–8',v:'Con lastre de 4–6 kg'},tip:'Rango completo, sin rebotar abajo.'},
-      {id:'d6',n:'Remo unilateral con mancuerna',tag:'manc',f1:{s:3,r:'10–12 c/lado',v:'Mancuerna cargada (~10 kg)'},f2:{s:3,r:'12–15 c/lado',v:'Pausa de 1 s arriba'},tip:'Mano y rodilla sobre la cama; lleva el codo hacia la cadera.'}]},
-    {t:'Fuerza C',note:'Superserie, 60 s de pausa.',items:[
-      {id:'d7',n:'Flexiones arqueras',tag:'cuerpo',f1:{s:3,r:'4–5 c/lado',v:'Brazo de apoyo semiflexionado'},f2:{s:3,r:'5–6 c/lado'},tip:'El peso va a un brazo; el otro solo ayuda.'},
-      {id:'d8',n:'Plancha Copenhague',tag:'suelo',f1:{s:3,r:'15 s c/lado',v:'Rodilla apoyada en la cama o una silla'},f2:{s:3,r:'20–25 s c/lado',v:'Pie apoyado'},tip:'Aductores fuertes protegen la ingle y las rodillas al correr.'}]},
-    {t:'Acondicionamiento',note:'Anota las rondas en la nota del día.',items:[
-      {id:'d9',n:'AMRAP: 5 dominadas supinas + 10 flexiones + 15 sentadillas',tag:'cuerpo',unit:'min',f1:{s:6,r:'máximo de rondas'},f2:{s:8,r:'máximo de rondas'},tip:'Ritmo constante de principio a fin.'}]}
+  D:{n:'Inferior 2 · Isquios y potencia',hora:'5:05 am',dur:'45–50 min',c:'var(--s5)',wu:'low',cd:'D',blocks:[
+    {t:'Potencia y tendón de Aquiles',note:'Superserie: pogos rápidos y elásticos, luego el isométrico con esfuerzo alto (8/10). 45 s de pausa.',items:[
+      {id:'d1',n:'Pogos (saltitos de tobillo)',tag:'cuerpo',f1:{s:3,r:'15'},f2:{s:3,r:'10 c/pierna',v:'A una pierna'},tip:'Rodillas casi rectas; rebotas con los tobillos, rápido y en silencio, como un resorte.'},
+      {id:'d2',n:'Talón sostenido a una pierna',tag:'manc',f1:{s:3,r:'30–45 s c/lado',v:'1 mancuerna de ~10 kg'},f2:{s:3,r:'45 s c/lado',v:'Mancuerna + mochila con lastre'},tip:'Talón arriba a media altura y quieto. Protege el tendón de Aquiles para trotar.'}]},
+    {t:'Bloque 1 · isquios',note:'Superserie, 60 s de pausa.',items:[
+      {id:'d3',n:'Peso muerto rumano a una pierna',tag:'manc',main:1,f1:{s:4,r:'8–10 c/pierna',v:'1 mancuerna de ~10 kg, bajas en 3 s'},f2:{s:4,r:'10 c/pierna',v:'Bajas en 4 s con pausa de 1 s abajo'},tip:'Cadera hacia atrás y espalda neutra; sientes el estiramiento detrás del muslo.'},
+      {id:'d4',n:'Crunch con mancuerna (fase 2: inverso)',tag:'manc',f1:{s:3,r:'12–15',v:'Mancuerna de 5–7 kg sobre el pecho'},f2:{s:3,r:'12',v:'Crunch inverso: llevas las rodillas al pecho despegando la cadera'},tip:'Enrolla la columna y exhala al subir; no tires del cuello.'}]},
+    {t:'Bloque 2 · isquios y glúteo',note:'Superserie, 60 s de pausa.',items:[
+      {id:'d5',n:'Nórdico',tag:'suelo',main:1,f1:{s:3,r:'3–5 negativas',v:'Pies bajo el sofá o la cama; bajas lo más lento que puedas y te ayudas con las manos para subir'},f2:{s:3,r:'5–6',v:'Aguanta más abajo antes de soltarte'},tip:'Rodillas sobre la colchoneta y cuerpo recto de rodilla a cabeza; frena la caída con los isquios.'},
+      {id:'d6',n:'Hip thrust a una pierna',tag:'manc',f1:{s:3,r:'10–12 c/pierna',v:'Espalda alta apoyada en el sofá'},f2:{s:3,r:'12 c/pierna',v:'Con la mancuerna de 10 kg sobre la cadera'},tip:'Subes apretando el glúteo hasta que cadera y rodilla queden en línea; no arquees la lumbar.'}]},
+    {t:'Bloque 3 · cuádriceps y oblicuos',note:'Superserie, 45 s de pausa.',items:[
+      {id:'d7',n:'Zancada atrás con déficit',tag:'manc',f1:{s:3,r:'8–10 c/pierna',v:'Pie de adelante sobre un escalón bajo; 2 mancuernas de ~7 kg'},f2:{s:3,r:'10 c/pierna',v:'2 mancuernas de ~10 kg'},tip:'Paso largo hacia atrás y torso un poco adelante; la rodilla de atrás casi toca el suelo.'},
+      {id:'d8',n:'Leñador con mancuerna',tag:'manc',f1:{s:2,r:'12 c/lado',v:'~5 kg con las dos manos'},f2:{s:3,r:'12 c/lado'},tip:'De arriba de un hombro hacia la cadera contraria; el giro sale del tronco, con los brazos casi rectos.'}]}
   ]},
-  E:{n:'Trote + movilidad',hora:'En la mañana',dur:'45–75 min',c:'var(--s3)',run:true,cd:'E'},
+  H:{n:'Habilidades (opcional)',hora:'En la mañana',dur:'25–30 min',c:'var(--muted)',wu:'we',cd:'H',blocks:[
+    {t:'Práctica de habilidades',note:'Opcional y lejos del fallo: es práctica, no un entreno pesado. 60 s de pausa. Si estás cansado, descansa.',items:[
+      {id:'h1',n:'Parada de manos contra la pared',tag:'cuerpo',f1:{s:5,r:'20–30 s',v:'Pecho a la pared, subiendo con los pies'},f2:{s:5,r:'30–40 s',v:'Más vertical, con toques de hombro asistidos'},tip:'Abdomen y glúteo apretados, empuja el suelo. Bajas caminando con las manos.'},
+      {id:'h2',n:'L-sit en paralelas',tag:'paral',f1:{s:5,r:'10 s',v:'Recogido: rodillas al pecho'},f2:{s:5,r:'10–15 s',v:'Una pierna estirada, alternando'},tip:'Brazos bloqueados, hombros abajo. Exhala.'},
+      {id:'h3',n:'Práctica de dominada prona',tag:'barra',f1:{s:5,r:'1–2',v:'Si no sale: negativa de 5 s'},f2:{s:5,r:'2–3'},tip:'Repeticiones perfectas con mucho descanso. La frecuencia enseña el patrón.'}]}
+  ]},
+  E:{n:'Trote largo + movilidad',hora:'En la mañana',dur:'45–75 min',c:'var(--s3)',run:true,cd:'E'},
   T:{n:'Test',hora:'',dur:'~40 min',c:'var(--accent)',ci:'var(--accent-ink)',wu:'we',test:true,cd:'T'},
-  R:{n:'Descanso activo',hora:'Cuando quieras',dur:'10–15 min',c:'var(--muted)',rest:true},
+  R:{n:'Trote suave o movilidad',hora:'5:05 am',dur:'15–25 min',c:'var(--muted)',rest:true},
   X:{n:'Descanso total',hora:'',dur:'Duermes hasta las 5:40',c:'var(--muted)',rest:true}
 };
-const LT={A:'A',B:'B',C:'C',D:'D',E:'E',T:'T',R:'m',X:'·'};
-const DOW={1:'A',2:'B',3:'R',4:'C',5:'X',6:'D',0:'E'};
+const LT={A:'A',B:'B',C:'C',D:'D',E:'E',T:'T',R:'m',H:'h',X:'·'};
+const DOW={1:'A',2:'B',3:'R',4:'C',5:'D',6:'H',0:'E'};
 const TRAIN={A:1,B:1,C:1,D:1,E:1,T:1};
 
 const RUN={1:{min:30,str:0,test:'t1'},2:{min:35,str:4},3:{min:40,str:4},4:{min:30,str:0},5:{min:45,str:6},6:{min:50,str:6},7:{min:55,str:6},8:{min:30,str:0,test:'t8'}};
@@ -135,41 +137,42 @@ const TESTS=[
 
 const WU_AM=[['Círculos de cuello, hombros, muñecas y cadera','1 min'],['Gato-camello','8 lentos'],['Sentadilla profunda sostenida, rodillas hacia afuera','30 s'],['Estocada con rotación de tronco','4 por lado'],['Retracciones de escápula colgado de la barra','8'],['Flexiones escapulares','8'],['Jumping jacks o skips en el sitio','45 s']];
 const WU_LAST=['Una serie fácil del primer ejercicio','al 50 %'];
-const WU_EXTRA={am:[],amj:[['Saltos suaves en el sitio','2 × 5']],we:[['Muñecas: balanceo en cuadrupedia y círculos','10 + 10'],['Saltos suaves en el sitio','2 × 5']]};
-const WU_MIN={am:'7 min',amj:'8 min',we:'10 min'};
-const wuList=k=>WU_AM.concat(WU_EXTRA[k]||[],[WU_LAST]);
+const WU_LOW=[['Círculos de cuello, hombros, muñecas y cadera','1 min'],['Gato-camello','8 lentos'],['Balanceos de pierna adelante-atrás y laterales','10 c/lado'],['Tobillo: rodilla a la pared','10 c/lado'],['Sentadilla profunda sostenida, rodillas hacia afuera','30 s'],['Estocada con rotación de tronco','4 por lado'],['Puente de glúteo','10'],['Saltos suaves en el sitio','2 × 5']];
+const WU_EXTRA={am:[],we:[['Muñecas: balanceo en cuadrupedia y círculos','10 + 10'],['Saltos suaves en el sitio','2 × 5']]};
+const WU_MIN={am:'7 min',low:'8 min',we:'10 min'};
+const wuList=k=>(k==='low'?WU_LOW:WU_AM.concat(WU_EXTRA[k]||[])).concat([WU_LAST]);
 
 const STRETCH={pecho:['Pecho en la pared','30 s c/lado'],tri:['Tríceps sobre la cabeza','30 s c/lado'],dorsal:['Colgado relajado de la barra','30 s'],bic:['Bíceps con el brazo estirado en la pared','30 s c/lado'],cuadri:['Cuádriceps de pie','30 s c/lado'],flexor:['Flexor de cadera en estocada baja','30 s c/lado'],isquio:['Isquiotibiales sentado','40 s c/lado'],gemelo:['Gemelo en la pared','30 s c/lado'],mariposa:['Mariposa (aductores)','45 s'],cobra:['Cobra','3 × 20 s'],child:['Postura del niño','60 s']};
-const CD={A:['pecho','tri','cuadri','flexor','child'],B:['dorsal','bic','cobra','child'],C:['cuadri','isquio','gemelo','child'],D:['pecho','dorsal','isquio','mariposa','cobra','child'],E:['cuadri','flexor','isquio','gemelo','mariposa','cobra','child'],T:['pecho','dorsal','cuadri','isquio','child']};
+const CD={A:['dorsal','pecho','tri','bic','child'],B:['cuadri','flexor','gemelo','mariposa','child'],C:['pecho','tri','bic','dorsal','child'],D:['isquio','flexor','gemelo','cobra','child'],H:['dorsal','child'],E:['cuadri','flexor','isquio','gemelo','mariposa','cobra','child'],T:['pecho','dorsal','cuadri','isquio','child']};
 const MOB=[['Rotaciones de cadera de pie','10 c/lado'],['Círculos de hombros','10 + 10'],['Estocada profunda con rotación','5 c/lado'],['Cadera 90/90, cambiando de lado','8 cambios'],['Gato-camello','10'],['Colgado relajado de la barra','30 s'],['Caminata (opcional)','20–30 min']];
 
 function phase(w){
-  if(w<=3) return {k:'f1',name:'Base',rpe:'Esfuerzo 7/10: terminas cada serie con 2–3 reps de reserva.',down:false};
+  if(w<=3) return {k:'f1',name:'Base',rpe:'Esfuerzo 7–8/10: terminas cada serie con unas 2 reps de reserva.',down:false};
   if(w===4) return {k:'f1',name:'Descarga',rpe:'Esfuerzo 6/10.',down:true};
-  if(w<=7) return {k:'f2',name:'Intensificación',rpe:'Esfuerzo 8/10: terminas con 1–2 reps de reserva.',down:false};
+  if(w<=7) return {k:'f2',name:'Intensificación',rpe:'Esfuerzo 8–9/10: 1–2 reps de reserva; la última serie de los ★ puede quedar a 0–1.',down:false};
   return {k:'f2',name:'Cierre',rpe:'Esfuerzo 7/10, sin llegar al fallo.',down:true};
 }
 const WNOTE={
-  1:'Semana de técnica. El lunes es el test inicial: anota todo y queda guardado en Progreso. El domingo, test de trote.',
+  1:'Semana de técnica. El lunes es el test inicial (reemplaza al Superior 1): anota todo y queda guardado en Progreso. El domingo, test de trote.',
   2:'Misma rutina. Busca el tope de cada rango con técnica limpia.',
-  3:'Suma 1 serie en los ejercicios marcados con ★.',
+  3:'Los ★ que tienen 3 series suben a 4. Los que ya tienen 4 progresan con reps o lastre.',
   4:'Descarga: 1 serie menos en todo y esfuerzo 6/10. Aquí se consolidan los tendones.',
   5:'Fase 2: variantes más difíciles y lastre.',
   6:'Si la semana pasada completaste el rango, sube reps o lastre.',
   7:'La semana más exigente del bloque.',
-  8:'Cierre: 1 serie menos de lunes a jueves. Sábado, test final; domingo, test de trote.'
+  8:'Cierre: 1 serie menos en todo. Sábado, test final; domingo, test de trote.'
 };
 function rx(ex,w){
   const ph=phase(w), p=ex[ph.k]||ex.f1;
   let s=p.s;
-  if(w===3&&ex.main) s+=1;
+  if(w===3&&ex.main&&p.s<4) s+=1;
   if(ph.down) s=Math.max(2,s-1);
   return {s,r:p.r,v:p.v||''};
 }
 function kegelFor(w){
   if(w<=2) return {pos:'Acostado boca arriba, rodillas dobladas',lento:'2 × 10 contracciones de 3 s, soltando 3 s',rap:'10 rápidas (1 s apretar, 1 s soltar)'};
   if(w<=4) return {pos:'Sentado, espalda recta',lento:'2 × 10 contracciones de 5 s, soltando 5 s',rap:'10 rápidas'};
-  return {pos:'De pie, y también durante el puente y el dead bug',lento:'2 × 10 contracciones de 8 s, soltando 8 s',rap:'15 rápidas'};
+  return {pos:'De pie, y también durante el dead bug y el hip thrust',lento:'2 × 10 contracciones de 8 s, soltando 8 s',rap:'15 rápidas'};
 }
 const KEGEL_HOW=[
   'Identifica el músculo: es el que usas para retener un gas o cortar la orina. Corta la orina una sola vez para reconocerlo; no lo uses como ejercicio.',
@@ -280,7 +283,7 @@ function stats(){
   for(let i=0;i<DAYS;i++){
     const d=addDays(startD(),i), p=planFor(d); if(!p) continue;
     const e=entry(d), st=status(d,p,e);
-    if(e&&(num(e.km)!=null||num(e.min)!=null)&&p.s==='E') r.runs.push({d,km:num(e.km),min:num(e.min),w:p.w});
+    if(e&&(num(e.km)!=null||num(e.min)!=null)&&(p.s==='E'||p.s==='R')) r.runs.push({d,km:num(e.km),min:num(e.min),w:p.w});
     if(e&&num(e.km)!=null) r.km+=num(e.km);
     if(!TRAIN[p.s]) continue;
     if(d>t||(d===t&&st!=='ok'&&st!=='part')) continue;
@@ -325,7 +328,7 @@ function wuBlock(k,open){
 }
 function cdBlock(s){
   const ids=CD[s]; if(!ids) return '';
-  return `<details class="en-blk en-fold"><summary><span>Vuelta a la calma · ${s==='E'?'10–12':s==='D'?'5':'3'} min</span><span class="muted small">Estiramientos</span></summary><div class="en-fold-b">${listRows(ids.map(i=>STRETCH[i]))}</div></details>`;
+  return `<details class="en-blk en-fold"><summary><span>Vuelta a la calma · ${s==='E'?'10–12':'3–4'} min</span><span class="muted small">Estiramientos</span></summary><div class="en-fold-b">${listRows(ids.map(i=>STRETCH[i]))}</div></details>`;
 }
 function kegelBlock(w,ctx){
   const k=kegelFor(w), on=!!(ctx.e&&ctx.e.kg);
@@ -340,11 +343,12 @@ function runBlock(w,ctx){
   if(r.str) rows.push(['Progresivos',`${r.str} × 15–20 s acelerando hasta el 80 %, caminando 45 s entre cada uno.`]);
   rows.push(['Dónde','El domingo en la mañana, la Ciclovía o un parque.']);
   let h=`<div class="en-blk"><h3>${r.test?'Test de trote':'Trote'}</h3>${rows.map(([a,b])=>`<div class="en-ex ro"><div class="b"><div class="n">${esc(a)}</div><div class="tip">${esc(b)}</div></div><div class="rx">${a==='Trote suave'?`${r.min} min`:a==='Test'?'30 min':a==='Progresivos'?`${r.str} ×`:''}</div></div>`).join('')}`;
-  if(ctx.live){
-    const mn=num(e.min), km=num(e.km);
-    h+=`<div class="en-inputs"><label class="f" for="en-min-${ctx.d}">Minutos<input class="in" id="en-min-${ctx.d}" type="number" inputmode="decimal" min="0" step="1" data-fi="min" data-d="${ctx.d}" value="${mn==null?'':mn}"></label><label class="f" for="en-km-${ctx.d}">Kilómetros<input class="in" id="en-km-${ctx.d}" type="number" inputmode="decimal" min="0" step="0.01" data-fi="km" data-d="${ctx.d}" value="${km==null?'':km}"></label><div class="en-pace"><span>Ritmo</span><b>${pace(mn,km)}</b></div></div>`;
-  }
+  if(ctx.live) h+=runInputs(ctx.d,e,'en');
   return h+'</div>';
+}
+function runInputs(d,e,pre){
+  e=e||{}; const mn=num(e.min), km=num(e.km);
+  return `<div class="en-inputs"><label class="f" for="${pre}-min-${d}">Minutos<input class="in" id="${pre}-min-${d}" type="number" inputmode="decimal" min="0" step="1" data-fi="min" data-d="${d}" value="${mn==null?'':mn}"></label><label class="f" for="${pre}-km-${d}">Kilómetros<input class="in" id="${pre}-km-${d}" type="number" inputmode="decimal" min="0" step="0.01" data-fi="km" data-d="${d}" value="${km==null?'':km}"></label><div class="en-pace"><span>Ritmo</span><b>${pace(mn,km)}</b></div></div>`;
 }
 function testBlock(w,ctx){
   const key=w>=8?'t8':'t1', vals=F.cfg.tests[key]||{};
@@ -358,8 +362,13 @@ function testBlock(w,ctx){
 function restBlock(s,ctx){
   if(s==='X') return `<div class="en-blk"><p class="en-note">Hoy no entrenas: duermes hasta las 5:40 y el cuerpo se recupera. Solo los Kegel.</p></div>`;
   const on=!!(ctx.e&&ctx.e.mob);
-  const chk=ctx.live?`<button type="button" class="en-chk" role="checkbox" aria-checked="${on}" aria-label="Movilidad hecha" data-fa="mob" data-d="${ctx.d}">${FIC.ok}</button>`:'';
-  return `<div class="en-blk"><h3>Movilidad</h3><div class="en-ex${ctx.live?'':' ro'}${on?' done':''}">${chk}<div class="b"><div class="n">Rutina de movilidad</div><div class="tip">Suave, sin forzar. Ayuda a recuperar para el jueves.</div></div><div class="rx">10 min</div></div>${listRows(MOB)}</div>`;
+  const chk=ctx.live?`<button type="button" class="en-chk" role="checkbox" aria-checked="${on}" aria-label="Hecho: trote suave o movilidad" data-fa="mob" data-d="${ctx.d}">${FIC.ok}</button>`:'';
+  const opt=(n,t,r)=>`<div class="en-ex ro"><div class="b"><div class="n">${esc(n)}</div><div class="tip">${esc(t)}</div></div><div class="rx">${esc(r)}</div></div>`;
+  let h=`<div class="en-blk"><h3>Elige una, según cómo amanezcas</h3><div class="en-ex${ctx.live?'':' ro'}${on?' done':''}">${chk}<div class="b"><div class="n">Trote suave o movilidad</div><div class="tip">Márcalo cuando hagas cualquiera de las dos.</div></div><div class="rx">15–25 min</div></div>`;
+  h+=opt('Opción 1 · Trote suave','20–25 min en zona 2: puedes hablar en frases completas. Grábalo con el GPS del celular y anota los datos abajo.','20–25 min');
+  h+=opt('Opción 2 · Movilidad','Si las piernas siguen cargadas del martes o dormiste mal. Suave, sin forzar.','10–15 min');
+  if(ctx.live) h+=runInputs(ctx.d,ctx.e,'en');
+  return h+`<details class="en-fold"><summary><span>Rutina de movilidad</span><span class="muted small">10–15 min</span></summary><div class="en-fold-b">${listRows(MOB)}</div></details></div>`;
 }
 function sesBody(s,w,ctx){
   const X=SES[s]; let h='';
@@ -384,7 +393,7 @@ function sessionCard(d,p,e){
   let pill='';
   if(TRAIN[s]) pill=st==='part'&&ids.length?`<span class="pill warn">En progreso · ${nd}/${ids.length}</span>`:pillFor(st);
   let h=`<section class="en-card" style="${ltStyle(s)}">${sesHead(s,d,pill)}${sesBody(s,p.w,ctx)}`;
-  h+=`<div class="en-blk"><label class="f" for="en-nota-${d}">Nota del día<textarea class="in" id="en-nota-${d}" rows="2" maxlength="400" data-fi="nota" data-d="${d}" placeholder="Cómo te sentiste, rondas del AMRAP, molestias…">${esc((e&&e.nota)||'')}</textarea></label></div>`;
+  h+=`<div class="en-blk"><label class="f" for="en-nota-${d}">Nota del día<textarea class="in" id="en-nota-${d}" rows="2" maxlength="400" data-fi="nota" data-d="${d}" placeholder="Cómo te sentiste, lastre que usaste, molestias…">${esc((e&&e.nota)||'')}</textarea></label></div>`;
   if(TRAIN[s]) h+=`<div class="en-foot">${st==='ok'?`<button type="button" class="btn block" data-fa="st" data-d="${d}">Quitar la marca de hecha</button>`:`<button type="button" class="btn primary lg block" data-fa="st" data-d="${d}">${fic('ok')}Marcar sesión hecha</button>`}</div>`;
   return h+'</section>';
 }
@@ -449,7 +458,7 @@ function vCal(){
     const lbl=`${fmtLong(d)}: ${p?SES[p.s].n+', '+({ok:'hecha',part:'a medias',miss:'sin registrar',none:TRAIN[p.s]?'pendiente':'descanso'}[s]):'fuera del bloque'}${e&&e.kg?', Kegel hechos':''}`;
     grid+=`<button type="button" class="${cls.join(' ')}" data-fa="cal" data-d="${d}" aria-pressed="${d===F.calSel}" aria-label="${esc(lbl)}"${p?` style="${ltStyle(p.s)}"`:''}><span class="dn">${i}</span><span class="en-lt">${p?LT[p.s]:''}</span>${e&&e.kg?'<i class="kg" aria-hidden="true"></i>':''}</button>`;
   }
-  const legend=['A','B','C','D','E','T'].map(s=>`<span><span class="en-lt st-ok" style="${ltStyle(s)}">${LT[s]}</span>${esc(SES[s].n)}</span>`).join('')+`<span><span class="en-lt rest">m</span>Movilidad</span><span><i class="en-kgdot"></i>Kegel</span>`;
+  const legend=['A','B','C','D','E','T'].map(s=>`<span><span class="en-lt st-ok" style="${ltStyle(s)}">${LT[s]}</span>${esc(SES[s].n)}</span>`).join('')+`<span><span class="en-lt rest">m</span>Trote suave o movilidad</span><span><span class="en-lt rest">h</span>Habilidades (opcional)</span><span><i class="en-kgdot"></i>Kegel</span>`;
   return `<div class="view en"><div class="view-head"><div><span class="eyebrow">${esc(fmtShort(startD()))} – ${esc(fmtShort(endD()))}</span><h1>Calendario</h1><p>Toca un día para chulearlo o abrir la sesión.</p></div></div>
     ${tilesHtml(st)}
     <div class="en-calwrap">
@@ -466,9 +475,9 @@ function calDetail(d){
   const s=p.s, st=status(d,p,e), on=!!(e&&e.kg), X=SES[s];
   let h=`<section class="panel en-det" style="${ltStyle(s)}"><div class="en-det-h"><span class="en-badge">${LT[s]}</span><div><span class="eyebrow">${esc(cap(fmtLong(d)))} · semana ${p.w}</span><h2>${esc(X.n)}</h2></div>${TRAIN[s]?pillFor(st):''}</div><div class="stack s8">`;
   if(TRAIN[s]) h+=`<button type="button" class="btn ${st==='ok'?'':'primary'} block" data-fa="st" data-d="${d}">${st==='ok'?'Quitar la marca de hecha':fic('ok')+'Marcar sesión hecha'}</button>`;
-  else if(s==='R') h+=`<button type="button" class="btn block" data-fa="mob" data-d="${d}" aria-pressed="${!!(e&&e.mob)}">${e&&e.mob?'Movilidad hecha ✓':'Marcar movilidad hecha'}</button>`;
+  else if(s==='R') h+=`<button type="button" class="btn block" data-fa="mob" data-d="${d}" aria-pressed="${!!(e&&e.mob)}">${e&&e.mob?'Hecho ✓':'Marcar trote suave o movilidad hecha'}</button>`;
   h+=`<button type="button" class="en-toggle" role="checkbox" aria-checked="${on}" data-fa="kg" data-d="${d}"><span class="en-chk" aria-hidden="true">${FIC.ok}</span><span>Kegel del día</span></button>`;
-  if(s==='E'){ const mn=num(e&&e.min), km=num(e&&e.km); h+=`<div class="en-inputs"><label class="f" for="en-cmin-${d}">Minutos<input class="in" id="en-cmin-${d}" type="number" inputmode="decimal" min="0" step="1" data-fi="min" data-d="${d}" value="${mn==null?'':mn}"></label><label class="f" for="en-ckm-${d}">Km<input class="in" id="en-ckm-${d}" type="number" inputmode="decimal" min="0" step="0.01" data-fi="km" data-d="${d}" value="${km==null?'':km}"></label><div class="en-pace"><span>Ritmo</span><b>${pace(mn,km)}</b></div></div>`; }
+  if(s==='E'||s==='R') h+=runInputs(d,e,'en-c');
   h+=`<label class="f" for="en-cnota-${d}">Nota<textarea class="in" id="en-cnota-${d}" rows="2" maxlength="400" data-fi="nota" data-d="${d}">${esc((e&&e.nota)||'')}</textarea></label>`;
   h+=`<button type="button" class="btn ghost" data-fa="open" data-d="${d}">Abrir la sesión completa ${fic('r','sm')}</button></div></section>`;
   return h;
@@ -481,27 +490,28 @@ function vPlan(){
   const seg=Array.from({length:8},(_,i)=>`<button type="button" data-fa="plw" data-w="${i+1}" aria-pressed="${i+1===w}">${i+1}</button>`).join('');
   const days=Array.from({length:7},(_,i)=>addDays(startD(),(w-1)*7+i));
   const agenda=days.map(d=>{ const p=planFor(d); if(!p) return ''; const X=SES[p.s]; const hora=p.s==='T'?(pd(d).getDay()===6?'En la mañana':'5:05 am'):X.hora; return `<tr><td>${esc(fmtShort(d))}</td><td><span class="en-lt st-ok${TRAIN[p.s]?'':' rest'}" style="${ltStyle(p.s)}">${LT[p.s]}</span> ${esc(X.n)}</td><td>${esc(hora||'—')}</td><td class="r">${esc(X.dur)}</td></tr>`; }).join('');
-  const uniq=[]; for(const d of days){ const p=planFor(d); if(p&&TRAIN[p.s]&&!uniq.includes(p.s)) uniq.push(p.s); }
+  const uniq=[]; for(const d of days){ const p=planFor(d); if(p&&(TRAIN[p.s]||SES[p.s].blocks)&&!uniq.includes(p.s)) uniq.push(p.s); }
   const secs=uniq.map(s=>`<details class="sec en-sec"><summary><span class="en-sum"><span class="en-lt st-ok" style="${ltStyle(s)}">${LT[s]}</span>${esc(SES[s].n)} <span class="sub">${esc(SES[s].dur)}</span></span></summary><div class="en-card en-flat" style="${ltStyle(s)}">${sesBody(s,w,{live:false,plan:true})}</div></details>`).join('');
   const k=kegelFor(w);
-  return `<div class="view en en-narrow"><div class="view-head"><div><span class="eyebrow">8 semanas · ${esc(fmtShort(startD()))} – ${esc(fmtShort(endD()))}</span><h1>Plan</h1><p>Fuerza calisténica, tendones, potencia y resistencia.</p></div></div>
+  return `<div class="view en en-narrow"><div class="view-head"><div><span class="eyebrow">8 semanas · ${esc(fmtShort(startD()))} – ${esc(fmtShort(endD()))}</span><h1>Plan</h1><p>Tren superior e inferior: fuerza, tendones, potencia y resistencia.</p></div></div>
     <div class="seg en-wsel" role="group" aria-label="Semana">${seg}</div>
     <section class="panel en-phase"><div class="panel-h"><h2>Semana ${w} · ${esc(ph.name)}</h2><span class="sub">${esc(ph.rpe)}</span></div><p class="ink2">${esc(WNOTE[w])}</p></section>
     <section class="panel"><div class="panel-h"><h2>Agenda de la semana</h2></div><div class="tscroll"><table class="t en-agenda"><thead><tr><th>Día</th><th>Sesión</th><th>Hora</th><th class="r">Duración</th></tr></thead><tbody>${agenda}</tbody></table></div></section>
     <div class="stack">${secs}</div>
     <details class="sec"><summary>Suelo pélvico (Kegel) <span class="sub">Semana ${w}: ${esc(k.pos.toLowerCase())}</span></summary><div class="body"><div class="kv"><span>Posición</span><span>${esc(k.pos)}</span><span>Lentas</span><span>${esc(k.lento)}</span><span>Rápidas</span><span>${esc(k.rap)}</span></div><ul class="en-ul">${KEGEL_HOW.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></details>
-    <details class="sec"><summary>Calentamientos <span class="sub">Entre semana y fin de semana</span></summary><div class="body"><h3>Entre semana · 7 min</h3>${listRows(wuList('am'))}<h3>Fin de semana · 10 min</h3>${listRows(wuList('we'))}</div></details>
+    <details class="sec"><summary>Calentamientos <span class="sub">Superior, inferior y fin de semana</span></summary><div class="body"><h3>Tren superior · 7 min</h3>${listRows(wuList('am'))}<h3>Tren inferior · 8 min</h3>${listRows(wuList('low'))}<h3>Fin de semana · 10 min</h3>${listRows(wuList('we'))}</div></details>
     <details class="sec"><summary>Reglas de progresión <span class="sub">Cómo subir sin lesionarte</span></summary><div class="body"><ul class="en-ul">
       <li><b>Doble progresión:</b> si completas todas las series en el tope del rango con técnica limpia, la próxima vez pasas a la variante difícil o agregas lastre y vuelves al mínimo del rango.</li>
-      <li><b>Esfuerzo:</b> fase 1 deja 2–3 reps en reserva; fase 2, 1–2. Al fallo solo en los tests.</li>
+      <li><b>Esfuerzo:</b> fase 1 deja unas 2 reps en reserva; fase 2, 1–2, y la última serie de los ★ puede quedar a 0–1. Al fallo total solo en los tests.</li>
       <li><b>Tempo 3-1-1:</b> 3 s bajando, 1 s de pausa, 1 s subiendo.</li>
       <li><b>Lastre:</b> discos de tus mancuernas en una mochila, envueltos en una toalla. Empieza con 2,5–4 kg.</li>
-      <li><b>★</b> marca los ejercicios principales: en la semana 3 suman 1 serie.</li>
-      <li>Si fallas un día entre semana, muévelo al miércoles. Nunca hagas dos sesiones el mismo día.</li>
+      <li><b>★</b> marca los ejercicios principales: en la semana 3, los de 3 series suben a 4.</li>
+      <li><b>Superior e inferior:</b> cada músculo se trabaja 2 veces por semana. Nunca trotes el mismo día de pierna, y los saltos siempre van al inicio, con las piernas frescas.</li>
+      <li>Si fallas un día entre semana, muévelo al miércoles o al sábado (en lugar de las habilidades). Nunca hagas dos sesiones el mismo día.</li>
       <li>Si un tendón o articulación molesta más de 3/10 al día siguiente, baja la carga de ese ejercicio esa semana. Dolor agudo: para.</li>
       <li>Días de entreno: a la cama a las 9:30 y en pie a las 5:00 (7,5 h).</li></ul></div></details>
-    <details class="sec"><summary>Tus mancuernas <span class="sub">Hasta ~10 kg por mano o ~20 kg en barra</span></summary><div class="body"><p class="ink2">Tienes 4 discos de 1,25 kg, 4 de 1,5 kg y 4 de 2 kg. Por mancuerna, en pares de discos, puedes armar 2,5 · 3 · 4 · 5,5 · 6,5 · 7 · 9,5 kg más el peso del maneral. Con el extensor armas una barra de ~20 kg para el remo y el lastre.</p><p class="ink2">La pierna progresa con trabajo a una pierna, tempo lento e isométricos, porque 10 kg por mano se quedan cortos rápido.</p></div></details>
-    <details class="sec"><summary>Modo universidad <span class="sub">3 días, para cuando vuelvas a clases</span></summary><div class="body">${listRows([['Martes 5:20 am · full body (40 min)','Dominadas supinas 3×8 · fondos 3×8 · búlgaras 3×8 c/pierna · remo 3×10 · hollow 3×30 s'],['Sábado','Sesión D: habilidades + fuerza'],['Domingo','Trote 30–40 min + movilidad'],['Todos los días','Kegel 4 min']])}</div></details>
+    <details class="sec"><summary>Tus mancuernas <span class="sub">Hasta ~10 kg por mano o ~20 kg en barra</span></summary><div class="body"><p class="ink2">Tienes 4 discos de 1,25 kg, 4 de 1,5 kg y 4 de 2 kg. Por mancuerna, en pares de discos, puedes armar 2,5 · 3 · 4 · 5,5 · 6,5 · 7 · 9,5 kg más el peso del maneral. Con el extensor armas una barra de ~20 kg para el remo y el lastre.</p><p class="ink2">La pierna progresa con trabajo a una pierna, déficit, tempo lento e isométricos, porque 10 kg por mano se quedan cortos rápido.</p></div></details>
+    <details class="sec"><summary>Modo universidad <span class="sub">3 días, para cuando vuelvas a clases</span></summary><div class="body">${listRows([['Martes 5:20 am · full body (40 min)','Dominadas supinas 3×8 · fondos 3×8 · búlgaras 3×8 c/pierna · remo 3×10 · hollow 3×30 s'],['Sábado · ~60 min','Inferior 1 completo + bloque 1 del Superior 1'],['Domingo','Trote 30–40 min + movilidad'],['Todos los días','Kegel 4 min']])}</div></details>
   </div>`;
 }
 
@@ -518,12 +528,12 @@ function vProg(){
   }).join('');
   let mrows='';
   for(let w=1;w<=8;w++){ const m=F.cfg.med[w]||{}; mrows+=`<tr><td>Semana ${w}</td><td class="r"><input class="in en-num" type="number" inputmode="decimal" min="0" step="0.1" id="en-m-${w}-kg" aria-label="Peso semana ${w}" data-fm="${w}.kg" value="${m.kg==null?'':m.kg}"></td><td class="r"><input class="in en-num" type="number" inputmode="decimal" min="0" step="0.5" id="en-m-${w}-cm" aria-label="Cintura semana ${w}" data-fm="${w}.cm" value="${m.cm==null?'':m.cm}"></td></tr>`; }
-  const runs=st.runs.length?st.runs.map(r=>`<tr><td>${esc(fmtShort(r.d))}</td><td class="r">${r.min==null?'—':fmtN(r.min,0)+' min'}</td><td class="r">${r.km==null?'—':fmtN(r.km,2)+' km'}</td><td class="r">${pace(r.min,r.km)}</td></tr>`).join(''):`<tr><td colspan="4" class="muted">Todavía no hay trotes registrados. Anótalos el domingo en Hoy o en el Calendario.</td></tr>`;
+  const runs=st.runs.length?st.runs.map(r=>`<tr><td>${esc(fmtShort(r.d))}</td><td class="r">${r.min==null?'—':fmtN(r.min,0)+' min'}</td><td class="r">${r.km==null?'—':fmtN(r.km,2)+' km'}</td><td class="r">${pace(r.min,r.km)}</td></tr>`).join(''):`<tr><td colspan="4" class="muted">Todavía no hay trotes registrados. Anótalos en Hoy o en el Calendario.</td></tr>`;
   return `<div class="view en"><div class="view-head"><div><span class="eyebrow">${cw?`Semana ${cw} de 8`:'Antes del bloque'}</span><h1>Progreso</h1><p>Constancia, tests y medidas.</p></div></div>
     ${tilesHtml(st)}
     <div class="grid g2">
       <section class="panel"><div class="panel-h"><h2>Cumplimiento por semana</h2><span class="sub">hechas / planificadas</span></div><div class="hbars">${bars}</div></section>
-      <section class="panel"><div class="panel-h"><h2>Trotes</h2><span class="sub">domingos</span></div><div class="tscroll"><table class="t"><thead><tr><th>Día</th><th class="r">Tiempo</th><th class="r">Distancia</th><th class="r">Ritmo</th></tr></thead><tbody>${runs}</tbody></table></div></section>
+      <section class="panel"><div class="panel-h"><h2>Trotes</h2><span class="sub">domingos y miércoles</span></div><div class="tscroll"><table class="t"><thead><tr><th>Día</th><th class="r">Tiempo</th><th class="r">Distancia</th><th class="r">Ritmo</th></tr></thead><tbody>${runs}</tbody></table></div></section>
       <section class="panel"><div class="panel-h"><h2>Test inicial vs final</h2><span class="sub">semana 1 y semana 8</span></div><div class="tscroll"><table class="t en-tt"><thead><tr><th>Prueba</th><th class="r">Inicial</th><th class="r">Final</th><th class="r">Cambio</th></tr></thead><tbody>${trows}</tbody></table></div></section>
       <section class="panel"><div class="panel-h"><h2>Peso y cintura</h2><span class="sub">1 vez por semana, en ayunas</span></div><p class="small ink2" style="margin-bottom:8px">Peso estable y cintura igual o menor: la recomposición va bien. La cintura se mide a la altura del ombligo.</p><div class="tscroll"><table class="t en-tt"><thead><tr><th>Semana</th><th class="r">Peso (kg)</th><th class="r">Cintura (cm)</th></tr></thead><tbody>${mrows}</tbody></table></div></section>
     </div></div>`;
